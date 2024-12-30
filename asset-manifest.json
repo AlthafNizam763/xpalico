@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/xpalico/static/css/main.e6c13ad2.css",
-    "main.js": "/xpalico/static/js/main.6c8c027b.js",
-    "static/js/453.ed3810f9.chunk.js": "/xpalico/static/js/453.ed3810f9.chunk.js",
-    "static/media/logo2.gif": "/xpalico/static/media/logo2.5e51620cd91d8fd5df1e.gif",
-    "static/media/Fuel Delivery.jpeg": "/xpalico/static/media/Fuel Delivery.252a525db499c0852cd3.jpeg",
-    "static/media/Seven Petals.jpeg": "/xpalico/static/media/Seven Petals.ac7aedc6dd9d0dcabb29.jpeg",
-    "static/media/Portfolio.png": "/xpalico/static/media/Portfolio.a5e783fdc68281baa67e.png",
-    "static/media/profile.jpg": "/xpalico/static/media/profile.32d64fca9c95b9e2dd02.jpg",
-    "index.html": "/xpalico/index.html",
-    "main.e6c13ad2.css.map": "/xpalico/static/css/main.e6c13ad2.css.map",
-    "main.6c8c027b.js.map": "/xpalico/static/js/main.6c8c027b.js.map",
-    "453.ed3810f9.chunk.js.map": "/xpalico/static/js/453.ed3810f9.chunk.js.map"
+    "main.css": "/static/css/main.e6c13ad2.css",
+    "main.js": "/static/js/main.d2b34164.js",
+    "static/js/453.ed3810f9.chunk.js": "/static/js/453.ed3810f9.chunk.js",
+    "static/media/logo2.gif": "/static/media/logo2.5e51620cd91d8fd5df1e.gif",
+    "static/media/Fuel Delivery.jpeg": "/static/media/Fuel Delivery.252a525db499c0852cd3.jpeg",
+    "static/media/Seven Petals.jpeg": "/static/media/Seven Petals.ac7aedc6dd9d0dcabb29.jpeg",
+    "static/media/Portfolio.png": "/static/media/Portfolio.a5e783fdc68281baa67e.png",
+    "static/media/profile.jpg": "/static/media/profile.32d64fca9c95b9e2dd02.jpg",
+    "index.html": "/index.html",
+    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
+    "main.d2b34164.js.map": "/static/js/main.d2b34164.js.map",
+    "453.ed3810f9.chunk.js.map": "/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.6c8c027b.js"
+    "static/js/main.d2b34164.js"
   ]
 }
