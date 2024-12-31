@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { FaEnvelope, FaInstagram, FaWhatsapp, FaFacebook, FaLinkedin, FaPinterest, FaDribbble } from 'react-icons/fa';
+import { FaEnvelope, FaInstagram, FaWhatsapp, FaFacebook, FaLinkedin, FaPinterest, FaDribbble, FaPaperPlane } from 'react-icons/fa';
 
 // Styled component for the Contact container with fade-in animation
 const ContactContainer = styled.div`
@@ -98,11 +98,25 @@ const SubmitButton = styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative; /* Needed for absolute positioning of the icon */
 
   &:hover {
     background-color: #6a11cb;
     transform: scale(1.05);
+  }
+
+  svg {
+    margin-left: 10px; /* Space between text and icon */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+
+  &.clicked svg {
+    transform: translateX(10px) rotate(15deg); /* Icon will move and rotate when clicked */
+    opacity: 0; /* Make it disappear after the click */
   }
 `;
 
@@ -124,7 +138,6 @@ const SocialMediaIcon = styled.a`
     transform: scale(1.2) rotate(15deg); /* Add rotation and scaling animation */
   }
 
-  /* Optional: Add a keyframe animation for smooth hover effect */
   &:focus {
     outline: none;
   }
@@ -136,6 +149,8 @@ const Contact = () => {
     email: '',
     message: '',
   });
+  
+  const [clicked, setClicked] = useState(false); // Track button click state
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -147,8 +162,12 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setClicked(true); // Set clicked to true when the button is pressed
     console.log('Form Submitted:', formData);
     setFormData({ name: '', email: '', message: '' });
+
+    // Reset the animation after a short delay (animation duration)
+    setTimeout(() => setClicked(false), 1000); // Adjust time for the animation duration
   };
 
   return (
@@ -179,7 +198,11 @@ const Contact = () => {
           rows="5"
           required
         />
-        <SubmitButton type="submit">Send Message</SubmitButton>
+        {/* Submit Button with Paper Plane Icon */}
+        <SubmitButton type="submit" className={clicked ? 'clicked' : ''}>
+          Send Message
+          <FaPaperPlane />
+        </SubmitButton>
       </ContactForm>
       <SocialMediaContainer>
         <SocialMediaIcon href="mailto:alraravuthar012@gmail.com" aria-label="Email">
