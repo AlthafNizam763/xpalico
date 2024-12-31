@@ -40,6 +40,7 @@ const DateTimeContainer = styled.div`
 // Navbar component
 const Navbar = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
+  
 
   // Update the time every second
   useEffect(() => {
