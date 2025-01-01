@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/xpalico/static/css/main.e6c13ad2.css",
-    "main.js": "/xpalico/static/js/main.6c8c027b.js",
+    "main.css": "/xpalico/static/css/main.d33d1006.css",
+    "main.js": "/xpalico/static/js/main.9fd277fc.js",
     "static/js/453.ed3810f9.chunk.js": "/xpalico/static/js/453.ed3810f9.chunk.js",
     "static/media/logo2.gif": "/xpalico/static/media/logo2.5e51620cd91d8fd5df1e.gif",
     "static/media/Fuel Delivery.jpeg": "/xpalico/static/media/Fuel Delivery.252a525db499c0852cd3.jpeg",
     "static/media/Seven Petals.jpeg": "/xpalico/static/media/Seven Petals.ac7aedc6dd9d0dcabb29.jpeg",
+    "static/media/profile.jpg": "/xpalico/static/media/profile.c81dd64008ca8a1e97cb.jpg",
     "static/media/Portfolio.png": "/xpalico/static/media/Portfolio.a5e783fdc68281baa67e.png",
-    "static/media/profile.jpg": "/xpalico/static/media/profile.32d64fca9c95b9e2dd02.jpg",
     "index.html": "/xpalico/index.html",
-    "main.e6c13ad2.css.map": "/xpalico/static/css/main.e6c13ad2.css.map",
-    "main.6c8c027b.js.map": "/xpalico/static/js/main.6c8c027b.js.map",
+    "main.d33d1006.css.map": "/xpalico/static/css/main.d33d1006.css.map",
+    "main.9fd277fc.js.map": "/xpalico/static/js/main.9fd277fc.js.map",
     "453.ed3810f9.chunk.js.map": "/xpalico/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.6c8c027b.js"
+    "static/css/main.d33d1006.css",
+    "static/js/main.9fd277fc.js"
   ]
 }
