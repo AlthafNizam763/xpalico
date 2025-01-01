@@ -28,22 +28,73 @@ app.post('/send-email', async (req, res) => {
             service: 'gmail', // Change as per your email service
             auth: {
                 user: 'alraravuthar012@gmail.com', // Replace with your email
-                pass: '9633146330',  // Replace with your email password
+                pass: 'rszd pmpi cllu znuo',  // Replace with your email password or app password
             },
         });
 
+        // Define the HTML template
+        const emailTemplate = `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Email</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    color: #333;
+                }
+                .container {
+                    background-color: #f4f4f4;
+                    padding: 20px;
+                    border-radius: 8px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+                h2 {
+                    color: #4CAF50;
+                }
+                .message {
+                    background-color: #fff;
+                    padding: 10px;
+                    border-radius: 5px;
+                    margin-top: 10px;
+                }
+                .footer {
+                    margin-top: 20px;
+                    font-size: 12px;
+                    color: #888;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <h2>New Message from ${name}</h2>
+                <p><strong>Email:</strong> ${email}</p>
+                <div class="message">
+                    <p>${message}</p>
+                </div>
+                <div class="footer">
+                    <p>This is an automated message. Please do not reply.</p>
+                </div>
+            </div>
+        </body>
+        </html>
+        `;
+
+        // Set up mail options with HTML body
         const mailOptions = {
             from: email,
             to: 'alraravuthar012@gmail.com', // Replace with your email
             subject: `Message from ${name}`,
-            text: message,
+            html: emailTemplate, // Use the HTML template here
         };
 
         await transporter.sendMail(mailOptions);
         res.send({ success: true, message: 'Email sent successfully!' });
     } catch (error) {
-        console.error(error);
-        res.status(500).send({ error: 'Error sending email.' });
+        console.error("Error Details:", error); // Log the error for debugging
+        res.status(500).send({ error: 'Error sending email. Please check the server logs for details.' });
     }
 });
 

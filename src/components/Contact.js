@@ -160,14 +160,32 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setClicked(true); // Set clicked to true when the button is pressed
-    console.log('Form Submitted:', formData);
-    setFormData({ name: '', email: '', message: '' });
 
-    // Reset the animation after a short delay (animation duration)
-    setTimeout(() => setClicked(false), 1000); // Adjust time for the animation duration
+    try {
+      const response = await fetch('http://localhost:5000/send-email', { // Update this URL if the backend is deployed
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        alert('Your message has been sent successfully!');
+      } else {
+        alert('There was an error sending your message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Failed to send the message. Please try again later.');
+    }
+
+    setFormData({ name: '', email: '', message: '' }); // Reset the form data
+    setTimeout(() => setClicked(false), 1000); // Reset the button animation
   };
 
   return (
@@ -198,7 +216,6 @@ const Contact = () => {
           rows="5"
           required
         />
-        {/* Submit Button with Paper Plane Icon */}
         <SubmitButton type="submit" className={clicked ? 'clicked' : ''}>
           Send Message
           <FaPaperPlane />

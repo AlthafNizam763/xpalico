@@ -19,16 +19,19 @@ const AboutWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px; /* Adds space between the image and text */
-  flex-direction: row; /* This aligns them horizontally */
+  gap: 40px; /* Increased space between image and text */
+  flex-direction: row;
+  margin-bottom: 40px;
 `;
 
 // Styled component for the profile image
 const ProfileImage = styled.img`
-  width: 150px;
-  height: 150px;
+  width: 180px;
+  height: 180px;
   border-radius: 50%;
   object-fit: cover;
+  border: 5px solid #ffffff;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Added shadow */
 `;
 
 // Styled component for the text content
@@ -62,6 +65,20 @@ const Skill = styled.div`
   }
 `;
 
+// Styled component for the "About Me" title
+const Title = styled.h2`
+  font-weight: bold;  /* Make the "About Me" title bold */
+`;
+
+// Styled component for the paragraph text
+const Paragraph = styled.p`
+`;
+
+// Styled component for the "Skills & Technologies" title
+const StyledH3 = styled.h3`
+  font-weight: bold;  /* Make the "Skills & Technologies" title bold */
+`;
+
 const AboutMe = () => {
   return (
     <AboutContainer>
@@ -72,18 +89,18 @@ const AboutMe = () => {
 
         {/* Text Content */}
         <TextContent>
-          <h2>About Me</h2>
-          <p>
+          <Title>About Me</Title>
+          <Paragraph>
             I am a self-taught developer who is passionate about building interactive web applications with React. I enjoy solving complex problems, learning new technologies, and continuously improving my coding skills. My journey as a developer has been shaped by curiosity, perseverance, and a deep love for creating seamless user experiences.
-          </p>
-          <p>
+          </Paragraph>
+          <Paragraph>
             I thrive in environments that challenge me to think outside the box and push my limits. With a strong foundation in JavaScript, HTML, and CSS, I'm always exploring modern frameworks and libraries to stay up-to-date with the latest trends in web development. I’m also eager to collaborate with others, share knowledge, and contribute to open-source projects to grow as a developer.
-          </p>
+          </Paragraph>
         </TextContent>
       </AboutWrapper>
 
       {/* Skills Section */}
-      <h3>Skills & Technologies</h3>
+      <StyledH3>Skills & Technologies</StyledH3>
       <SkillsContainer>
         <Skill>HTML5</Skill>
         <Skill>CSS3</Skill>
@@ -91,7 +108,7 @@ const AboutMe = () => {
         <Skill>Bootstrap</Skill>
         <Skill>jQuery</Skill>
         <Skill>React</Skill>
-        <Skill> REST APIs</Skill>
+        <Skill>REST APIs</Skill>
         <Skill>PHP</Skill>
         <Skill>CodeIgniter</Skill>
       </SkillsContainer>

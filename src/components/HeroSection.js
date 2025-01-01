@@ -1,111 +1,63 @@
-import React, { useState, useEffect, useRef } from 'react';
-import styled, { keyframes } from 'styled-components';
-import logo from '../assets/logo2.gif'; // Import your logo
-import profile from '../assets/profile.jpg'; // Import the profile image
-import introAudio from '../assets/intro.mp3'; // Import the intro audio file
+import React from 'react';
+import styled from 'styled-components';
 
-// Keyframe animation for intro logo
-const fadeInOut = keyframes`
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(1.2);
-  }
-`;
+// Import the profile image
+import profile from '../assets/profile.jpg';  // Adjust the path based on where your image is located
 
-// Styled component for intro container
-const IntroContainer = styled.div`
-  display: ${(props) => (props.isVisible ? 'flex' : 'none')};
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: black;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-`;
-
-// Styled component for animated logo
-const AnimatedLogo = styled.img`
-  width: 150px;
-  height: auto;
-  animation: ${fadeInOut} 3s ease-in-out forwards;
-`;
-
-// Styled component for hero container
+// Styled component for the Hero container
 const HeroContainer = styled.div`
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #282c34;
+  background: linear-gradient(to bottom, #282c34, #1c1c1c); /* Gradient background */
   color: white;
   text-align: center;
   flex-direction: column;
+  padding: 0 20px;  /* Padding added for mobile responsiveness */
 `;
 
-// Styled component for profile image
+// Styled component for the profile image
 const ProfileImage = styled.img`
-  width: 150px;
-  height: 150px;
+  width: 180px; /* Increased the size of the profile image */
+  height: 180px;
   border-radius: 50%;
-  margin-bottom: 20px;
+  object-fit: cover;
+  border: 5px solid #ffffff; /* Added a white border around the profile image */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
+  margin-bottom: 30px;  /* Increased margin between image and text */
 `;
 
-// Main App Component
-const App = () => {
-  const [showIntro, setShowIntro] = useState(true);
-  const audioRef = useRef(new Audio(introAudio)); // Create a reference for the audio element
+// Styled component for the heading
+const Heading = styled.h2`
+  font-weight: bold;  
+  font-size: 2.5em; /* Increased font size */
+  margin-bottom: 10px; /* Added space between heading and paragraph */
+  letter-spacing: 1px; /* Added letter-spacing for a clean, modern feel */
+  text-transform: uppercase; /* Added uppercase styling for a bold statement */
+`;
 
-  useEffect(() => {
-    // Play audio when the component mounts, and ensure it's not paused immediately
-    audioRef.current.play().catch((error) => {
-      // Handle errors if autoplay fails, like on mobile browsers
-      console.error('Audio play failed:', error);
-    });
+// Styled component for the paragraph
+const Paragraph = styled.p`
+  font-weight: bold;  
+  font-size: 1.2em; /* Increased font size */
+  max-width: 600px;  /* Set a maximum width for better readability */
+  margin: 0 auto;  /* Center-align the text */
+  line-height: 1.6; /* Increased line-height for better readability */
+  letter-spacing: 0.5px;  /* Slight letter-spacing for clarity */
+`;
 
-    const timer = setTimeout(() => {
-      setShowIntro(false); // Hide intro animation after 3 seconds
-      audioRef.current.pause(); // Pause the audio after the intro animation finishes
-    }, 3000); // The same duration as the intro animation
-
-    return () => {
-      clearTimeout(timer);
-      audioRef.current.pause(); // Make sure to pause the audio when the component unmounts
-    };
-  }, []);
-
+// Hero section component
+const HeroSection = () => {
   return (
-    <>
-      {/* Intro Animation */}
-      <IntroContainer isVisible={showIntro}>
-        <AnimatedLogo src={logo} alt="Intro Logo" />
-      </IntroContainer>
-
-      {/* Hero Section */}
-      {!showIntro && (
-        <HeroContainer>
-          {/* Profile Image */}
-          <ProfileImage src={profile} alt="Profile" />
-          
-          {/* Text content */}
-          <div>
-            <h2>Hello, I'm XPALICO</h2>
-            <p>I am a passionate Software Developer</p>
-          </div>
-        </HeroContainer>
-      )}
-    </>
+    <HeroContainer>
+      <ProfileImage src={profile} alt="Profile" />
+      <div>
+        <Heading>Hello, I'm ALTHAF N</Heading>
+        <Paragraph>I am a passionate Software Developer, eager to learn and create amazing web applications. I specialize in building dynamic and interactive websites with modern technologies.</Paragraph>
+      </div>
+    </HeroContainer>
   );
 };
 
-export default App;
+export default HeroSection;

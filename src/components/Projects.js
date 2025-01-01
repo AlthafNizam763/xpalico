@@ -52,32 +52,45 @@ const ProjectImage = styled.img`
   margin-bottom: 20px;
 `;
 
+// Heading styling
+const Heading = styled.h2`
+  font-weight: bold;  
+  font-size: 2.5em; /* Increased font size */
+  margin-bottom: 10px; /* Added space between heading and paragraph */
+  letter-spacing: 1px; /* Added letter-spacing for a clean, modern feel */
+  text-transform: uppercase; /* Added uppercase styling for a bold statement */
+`;
+
+const StyledH3 = styled.h3`
+  font-weight: bold;  /* Make the "Skills & Technologies" title bold */
+`;
+
 // Projects component
 const Projects = () => {
   return (
     <ProjectsContainer>
-      <h2>My Projects</h2>
+      <Heading>My Projects</Heading>
 
       {/* Wrapper for all projects */}
       <ProjectsWrapper>
         {/* Fuel Delivery Project */}
         <ProjectCard>
           <ProjectImage src={fuelDeliveryImage} alt="Fuel Delivery" />
-          <h3>Fuel Delivery</h3>
+          <StyledH3>Fuel Delivery</StyledH3>
           <p>The Fuel Delivery Management System is an innovative solution designed to streamline the process of delivering fuel to various locations, ensuring efficiency, safety, and real-time tracking. This system is tailored for fuel distribution companies to manage deliveries, monitor inventory, track fuel trucks, and improve customer satisfaction.</p>
         </ProjectCard>
 
         {/* Seven Petals Project */}
         <ProjectCard>
           <ProjectImage src={sevenPetalsImage} alt="Seven Petals" />
-          <h3>Seven Petals</h3>
+          <StyledH3>Seven Petals</StyledH3>
           <p>Seven Petals is a fully functional e-commerce website designed for plant enthusiasts looking to buy, sell, and explore a variety of plants and gardening products online. This project is built using modern web technologies like React, PHP, and jQuery, with a focus on providing a user-friendly experience, secure transactions, and seamless navigation.</p>
         </ProjectCard>
 
         {/* Portfolio Project */}
         <ProjectCard>
           <ProjectImage src={portfolioImage} alt="Portfolio" />
-          <h3>Portfolio</h3>
+          <StyledH3>Portfolio</StyledH3>
           <p>My Portfolio Website is a personal showcase of my skills, projects, and accomplishments as a self-taught developer. This website serves as an online resume and an interactive experience where potential clients, employers, or collaborators can explore my work, learn about my background, and get in touch.</p>
         </ProjectCard>
       </ProjectsWrapper>

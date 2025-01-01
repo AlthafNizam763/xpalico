@@ -1,83 +1,66 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import profile from '../assets/logo2.gif'; // Import the profile image
+import profile from '../assets/logo2.gif'; 
+import { FaHome, FaUser, FaProjectDiagram, FaEnvelope } from 'react-icons/fa'; 
 
 // Styled components for Navbar container and links
 const NavbarContainer = styled.nav`
-  background-color: #333;
-  padding: 10px 20px;
+  background-color: #1c1c1c; /* Darker background for contrast */
+  padding: 10px 30px; /* Increased padding for better spacing */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative; /* Allow positioning of the center date/time */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adding a shadow for a sleek look */
 `;
 
 const NavLinks = styled.div`
   display: flex;
-  gap: 15px;
+  gap: 25px; /* Increased gap for spacing between links */
 `;
 
 const Logo = styled.img`
-  width: 150px; /* Adjust the logo size */
+  width: 130px; /* Adjusted logo size */
   height: auto;
-  margin-left: 10px; /* Add spacing between title and logo */
+  border-radius: 50%; /* Added circular shape to the logo */
+  margin-left: 10px;
 `;
 
-const DateTimeContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color:rgb(255, 255, 255); /* Yellow color */
-  font-size: 1.2rem;
+const NavLink = styled(Link)`
+  color: #ffffff; /* White text color */
+  text-decoration: none;
   font-weight: bold;
-  text-shadow: 0 0 10pxrgb(224, 224, 221), 0 0 15pxrgb(223, 222, 219), 0 0 20pxrgb(212, 212, 209);
-  z-index: 1; /* Ensure it's above other content */
-  text-align: center;
+  font-size: 1.3em; /* Increased font size for better readability */
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Adjusted gap between icon and text */
+  transition: color 0.3s ease, transform 0.3s ease; /* Added transition for scaling effect */
+
+  &:hover {
+    color: #00d1b2; /* Hover color */
+    transform: scale(1.1); /* Slight scale effect on hover */
+  }
 `;
 
 // Navbar component
 const Navbar = () => {
-  const [currentTime, setCurrentTime] = useState(new Date());
-  
-
-  // Update the time every second
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000);
-
-    return () => clearInterval(intervalId); // Cleanup interval on unmount
-  }, []);
-
-  // Format time
-  const hours = currentTime.getHours().toString().padStart(2, '0');
-  const minutes = currentTime.getMinutes().toString().padStart(2, '0');
-  const seconds = currentTime.getSeconds().toString().padStart(2, '0');
-  const formattedTime = `${hours}:${minutes}:${seconds}`;
-
-  // Format date
-  const day = currentTime.getDate();
-  const month = currentTime.toLocaleString('default', { month: 'long' });
-  const year = currentTime.getFullYear();
-  const formattedDate = `${month} ${day}, ${year}`;
-
   return (
     <NavbarContainer>
       <Logo src={profile} alt="Profile" />
       <NavLinks>
-        <Link to="/" style={{ color: 'white', textDecoration: 'none' }}>Home</Link>
-        <Link to="/about" style={{ color: 'white', textDecoration: 'none' }}>About</Link>
-        <Link to="/projects" style={{ color: 'white', textDecoration: 'none' }}>Projects</Link>
-        <Link to="/contact" style={{ color: 'white', textDecoration: 'none' }}>Contact</Link>
+        <NavLink to="/">
+          <FaHome /> Home
+        </NavLink>
+        <NavLink to="/about">
+          <FaUser /> About
+        </NavLink>
+        <NavLink to="/projects">
+          <FaProjectDiagram /> Projects
+        </NavLink>
+        <NavLink to="/contact">
+          <FaEnvelope /> Contact
+        </NavLink>
       </NavLinks>
-
-      {/* Live Date and Time Display */}
-      <DateTimeContainer>
-        <div>{formattedDate}</div>
-        <div>{formattedTime}</div>
-      </DateTimeContainer>
     </NavbarContainer>
   );
 };
