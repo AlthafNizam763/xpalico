@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { FaEnvelope, FaInstagram, FaWhatsapp, FaFacebook, FaLinkedin, FaPinterest, FaDribbble, FaPaperPlane } from 'react-icons/fa';
+import { FaEnvelope, FaInstagram, FaWhatsapp, FaFacebook, FaLinkedin, FaPinterest, FaDribbble, FaPaperPlane, FaTimes, FaTwitter } from 'react-icons/fa'; // Use FaTwitter here
 
 // Styled component for the Contact container with fade-in animation
 const ContactContainer = styled.div`
@@ -34,6 +34,7 @@ const ContactForm = styled.form`
   max-width: 600px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   animation: slideIn 0.5s ease-out;
+  position: relative; /* To position the X button at the top-right */
 
   @keyframes slideIn {
     from {
@@ -44,6 +45,23 @@ const ContactForm = styled.form`
       transform: translateY(0);
       opacity: 1;
     }
+  }
+`;
+
+// Styled component for the close button (X)
+const CloseButton = styled.button`
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #ff4c4c;
   }
 `;
 
@@ -143,6 +161,14 @@ const SocialMediaIcon = styled.a`
   }
 `;
 
+const Heading = styled.h3`
+  font-weight: bold;  
+  font-size: 2.5em; /* Increased font size */
+  margin-bottom: 10px; /* Added space between heading and paragraph */
+  letter-spacing: 1px; /* Added letter-spacing for a clean, modern feel */
+  text-transform: uppercase; /* Added uppercase styling for a bold statement */
+`;
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -151,6 +177,7 @@ const Contact = () => {
   });
   
   const [clicked, setClicked] = useState(false); // Track button click state
+  const [showForm, setShowForm] = useState(true); // State to control the form visibility
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -188,39 +215,48 @@ const Contact = () => {
     setTimeout(() => setClicked(false), 1000); // Reset the button animation
   };
 
+  const handleCloseForm = () => {
+    setShowForm(false); // Close the form when X is clicked
+  };
+
   return (
     <ContactContainer>
-      <h2>Contact Me</h2>
-      <ContactForm onSubmit={handleSubmit}>
-        <Input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-        <Input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-        />
-        <TextArea
-          name="message"
-          placeholder="Your Message"
-          value={formData.message}
-          onChange={handleChange}
-          rows="5"
-          required
-        />
-        <SubmitButton type="submit" className={clicked ? 'clicked' : ''}>
-          Send Message
-          <FaPaperPlane />
-        </SubmitButton>
-      </ContactForm>
+       <Heading>Contact Me</Heading>
+      {showForm && (
+        <ContactForm onSubmit={handleSubmit}>
+          <CloseButton onClick={handleCloseForm}>
+            <FaTimes />
+          </CloseButton>
+          <Input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <Input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <TextArea
+            name="message"
+            placeholder="Your Message"
+            value={formData.message}
+            onChange={handleChange}
+            rows="5"
+            required
+          />
+          <SubmitButton type="submit" className={clicked ? 'clicked' : ''}>
+            Send Message
+            <FaPaperPlane />
+          </SubmitButton>
+        </ContactForm>
+      )}
       <SocialMediaContainer>
         <SocialMediaIcon href="mailto:alraravuthar012@gmail.com" aria-label="Email">
           <FaEnvelope />
@@ -234,14 +270,17 @@ const Contact = () => {
         <SocialMediaIcon href="https://www.facebook.com/xpalico" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <FaFacebook />
         </SocialMediaIcon>
-        <SocialMediaIcon href="https://www.linkedin.com/in/xpalico" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <SocialMediaIcon href="https://www.linkedin.com/in/althaf-nizam-b27489260" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
           <FaLinkedin />
         </SocialMediaIcon>
-        <SocialMediaIcon href="https://www.pinterest.com/xpalico" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
+        <SocialMediaIcon href="https://pin.it/2x8eSIEnR" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">
           <FaPinterest />
         </SocialMediaIcon>
-        <SocialMediaIcon href="https://dribbble.com/xpalico" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
+        <SocialMediaIcon href="https://dribbble.com/Xpalico/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22Xpalico%22&utm_content=%22About%20Xpalico%22&utm_medium=Social_Share" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
           <FaDribbble />
+        </SocialMediaIcon>
+        <SocialMediaIcon href="https://x.com/Alth_fx?t=Q-xW8GBOz9H4LJ8-iP_Vaw&s=0" target="_blank" rel="noopener noreferrer" aria-label="Twitter"> {/* Updated to FaTwitter */}
+          <FaTwitter />
         </SocialMediaIcon>
       </SocialMediaContainer>
     </ContactContainer>

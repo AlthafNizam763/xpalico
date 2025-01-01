@@ -53,7 +53,7 @@ const ProjectImage = styled.img`
 `;
 
 // Heading styling
-const Heading = styled.h2`
+const Heading = styled.h3`
   font-weight: bold;  
   font-size: 2.5em; /* Increased font size */
   margin-bottom: 10px; /* Added space between heading and paragraph */

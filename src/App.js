@@ -6,6 +6,7 @@ import HeroSection from './components/HeroSection';
 import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import Location from './components/location';
 import Footer from './components/Footer';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route path="/about" element={<AboutMe />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/location" element={<Location />} />
       </Routes>
       <Footer />
     </Router>
