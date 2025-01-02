@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FaDownload } from 'react-icons/fa';
 import profile from '../assets/profile.jpg'; 
+
 // Styled Components
 const ResumeContainer = styled.div`
   font-family: 'Arial', sans-serif;
@@ -75,18 +76,23 @@ const ContactItem = styled.p`
   margin: 5px 0;
 `;
 
+// Download Button Styled as Circle and Positioned at the Bottom-Right
 const DownloadButton = styled.a`
-  display: block;
-  width: fit-content;
-  margin: 30px auto;
-  padding: 12px 30px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
   background-color: #111;
   color: white;
-  font-size: 1.2rem;
+  font-size: 2rem;
+  border-radius: 50%;
   text-decoration: none;
-  border-radius: 5px;
-  text-align: center;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 
   &:hover {
     background-color: #555;
@@ -94,7 +100,7 @@ const DownloadButton = styled.a`
   }
 
   svg {
-    margin-left: 8px;
+    margin-left: 0;
   }
 `;
 
@@ -105,11 +111,11 @@ const Resume = () => {
       <SubHeading>Full-stack Developer</SubHeading>
 
       <ProfileContainer>
-      <ProfilePic src={profile} alt="Profile" />
+        <ProfilePic src={profile} alt="Profile" />
         <ContactDetails>
           <ContactItem>Email: althafnizam@gmail.com</ContactItem>
           <ContactItem>Phone: 9633146330</ContactItem>
-          <ContactItem>Location: Ayur,Kollam,Kerala</ContactItem>
+          <ContactItem>Location: Ayur, Kollam, Kerala</ContactItem>
           <ContactItem>Website: www.xpalico.com</ContactItem>
         </ContactDetails>
       </ProfileContainer>
@@ -134,7 +140,7 @@ const Resume = () => {
       <SectionTitle>Education</SectionTitle>
       <List>
         <ListItem>
-          <strong>Diploma in Computer Science and Engineering</strong> |(Graduated: May 2024)
+          <strong>Diploma in Computer Science and Engineering</strong> | (Graduated: May 2024)
           <p>Relevant coursework: Data Structures, Algorithms, Web Development.</p>
         </ListItem>
       </List>
@@ -147,10 +153,10 @@ const Resume = () => {
 
       <SectionTitle>Projects</SectionTitle>
       <List>
-      <ListItem>
+        <ListItem>
           <strong>Seven Petals Website:</strong> Seven Petals is a fully functional e-commerce website designed for plant enthusiasts looking to buy, sell, and explore a variety of plants and gardening products online.
         </ListItem>
-      <ListItem>
+        <ListItem>
           <strong>Website for Fuel Delivery:</strong> The Fuel Delivery is an innovative solution designed to streamline the process of delivering fuel to various locations.
         </ListItem>
         <ListItem>
@@ -158,10 +164,10 @@ const Resume = () => {
         </ListItem>
       </List>
 
+      {/* Circular Download Button */}
       <DownloadButton href="/resume.pdf" download>
-  Download Resume <FaDownload />
+        <FaDownload />
       </DownloadButton>
-
     </ResumeContainer>
   );
 };
