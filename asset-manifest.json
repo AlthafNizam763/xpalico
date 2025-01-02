@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/xpalico/static/css/main.d33d1006.css",
-    "main.js": "/xpalico/static/js/main.5244d99d.js",
+    "main.js": "/xpalico/static/js/main.ca3fa16f.js",
     "static/js/453.ed3810f9.chunk.js": "/xpalico/static/js/453.ed3810f9.chunk.js",
     "static/media/logo2.gif": "/xpalico/static/media/logo2.5e51620cd91d8fd5df1e.gif",
     "static/media/Fuel Delivery.jpeg": "/xpalico/static/media/Fuel Delivery.252a525db499c0852cd3.jpeg",
@@ -10,11 +10,11 @@
     "static/media/Portfolio.png": "/xpalico/static/media/Portfolio.a5e783fdc68281baa67e.png",
     "index.html": "/xpalico/index.html",
     "main.d33d1006.css.map": "/xpalico/static/css/main.d33d1006.css.map",
-    "main.5244d99d.js.map": "/xpalico/static/js/main.5244d99d.js.map",
+    "main.ca3fa16f.js.map": "/xpalico/static/js/main.ca3fa16f.js.map",
     "453.ed3810f9.chunk.js.map": "/xpalico/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d33d1006.css",
-    "static/js/main.5244d99d.js"
+    "static/js/main.ca3fa16f.js"
   ]
 }
