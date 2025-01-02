@@ -5,6 +5,7 @@ import LoadingScreen from './components/LoadingScreen';
 import HeroSection from './components/HeroSection';
 import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
+import Resume from './components/Resume';
 import Contact from './components/Contact';
 import Location from './components/location';
 import Footer from './components/Footer';
@@ -33,6 +34,7 @@ function App() {
         <Route path="/" element={<HeroSection />} />
         <Route path="/about" element={<AboutMe />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/resume" element={<Resume />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/location" element={<Location />} />
       </Routes>

@@ -12,7 +12,7 @@ const ProjectsContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #282c34;
+  background: linear-gradient(to bottom, #f9f9f9, #1c1c1c); 
   color: white;
   text-align: center;
   flex-direction: column;
@@ -57,9 +57,13 @@ const Heading = styled.h3`
   font-weight: bold;  
   font-size: 2.5em; /* Increased font size */
   margin-bottom: 10px; /* Added space between heading and paragraph */
+  background: linear-gradient(to bottom, #f9f9f9, #1c1c1c); /* Gradient applied */
+  -webkit-background-clip: text; /* Clips the background to the text */
+  -webkit-text-fill-color: transparent; /* Makes the text color transparent */
   letter-spacing: 1px; /* Added letter-spacing for a clean, modern feel */
   text-transform: uppercase; /* Added uppercase styling for a bold statement */
 `;
+
 
 const StyledH3 = styled.h3`
   font-weight: bold;  /* Make the "Skills & Technologies" title bold */

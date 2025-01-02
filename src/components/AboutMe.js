@@ -8,7 +8,7 @@ const AboutContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #282c34;
+ background: linear-gradient(to bottom, #f9f9f9, #1c1c1c); 
   color: white;
   text-align: center;
   flex-direction: column; /* Keeps everything in a vertical column */
@@ -66,12 +66,14 @@ const Skill = styled.div`
 `;
 
 // Styled component for the "About Me" title
-const Title = styled.h2`
+const Title = styled.h1`
   font-weight: bold;  /* Make the "About Me" title bold */
+  color: black;
 `;
 
 // Styled component for the paragraph text
 const Paragraph = styled.p`
+color: black;
 `;
 
 // Styled component for the "Skills & Technologies" title

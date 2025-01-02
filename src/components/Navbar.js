@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import profile from '../assets/logo2.gif'; 
-import { FaHome, FaUser, FaProjectDiagram, FaComment, FaLocationArrow, FaEnvelope } from 'react-icons/fa'; // Added location and envelope icons
+import { FaHome, FaUser, FaProjectDiagram, FaComment, FaLocationArrow, FaEnvelope,FaAddressCard } from 'react-icons/fa'; // Added location and envelope icons
 
 // Styled components for Navbar container and links
 const NavbarContainer = styled.nav`
@@ -94,9 +94,12 @@ const Navbar = () => {
         <NavLink to="/projects">
           <FaProjectDiagram /> Projects
         </NavLink>
+        <NavLink to="/resume">
+          <FaAddressCard /> Resume
+        </NavLink>
         <TakeMeDropdown>
           <NavLink to="#" onClick={() => setShowDropdown(!showDropdown)}>
-            <FaComment /> Take Me
+            <FaComment /> Get In Touch
           </NavLink>
           <DropdownIcons show={showDropdown}>
             <DropdownIcon to="/contact">

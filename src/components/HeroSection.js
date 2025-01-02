@@ -10,7 +10,7 @@ const HeroContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, #282c34, #1c1c1c); /* Gradient background */
+  background: linear-gradient(to bottom, #f9f9f9, #1c1c1c); /* Gradient background */
   color: white;
   text-align: center;
   flex-direction: column;
