@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaDownload } from 'react-icons/fa';
-import profile from '../assets/profile.jpg'; 
+import profile from '../assets/profile1.jpg'; 
 
 // Styled Components
 const ResumeContainer = styled.div`

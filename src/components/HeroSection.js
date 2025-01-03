@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 // Import the profile image
-import profile from '../assets/profile.jpg';  // Adjust the path based on where your image is located
+import profile from '../assets/profile1.jpg';  // Adjust the path based on where your image is located
 
 // Styled component for the Hero container
 const HeroContainer = styled.div`

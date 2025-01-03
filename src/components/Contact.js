@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { FaEnvelope, FaInstagram, FaWhatsapp, FaFacebook, FaLinkedin, FaPinterest, FaDribbble, FaPaperPlane, FaTimes, FaTwitter } from 'react-icons/fa'; // Use FaTwitter here
+import { FaEnvelope, FaInstagram, FaWhatsapp, FaFacebook, FaLinkedin, FaPinterest, FaDribbble, FaPaperPlane, FaTimes, FaTwitter,FaBong,} from 'react-icons/fa'; 
+import { Link } from 'react-router-dom';
 
 // Styled component for the Contact container with fade-in animation
 const ContactContainer = styled.div`
@@ -281,10 +282,13 @@ const Contact = () => {
         </SocialMediaIcon>
         <SocialMediaIcon href="https://dribbble.com/Xpalico/about?utm_source=Clipboard_%22clipboard_about%22&utm_campaign=%22Xpalico%22&utm_content=%22About%20Xpalico%22&utm_medium=Social_Share" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
           <FaDribbble />
-        </SocialMediaIcon>
+          </SocialMediaIcon>
         <SocialMediaIcon href="https://x.com/Alth_fx?t=Q-xW8GBOz9H4LJ8-iP_Vaw&s=0" target="_blank" rel="noopener noreferrer" aria-label="Twitter"> {/* Updated to FaTwitter */}
           <FaTwitter />
         </SocialMediaIcon>
+        <SocialMediaIcon as={Link} to="/message" aria-label="Message Me">
+        <FaBong />
+       </SocialMediaIcon>
       </SocialMediaContainer>
     </ContactContainer>
   );

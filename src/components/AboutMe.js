@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import profile from '../assets/profile.jpg';
+import profile from '../assets/profile1.jpg';
 
 // Styled component for the About container
 const AboutContainer = styled.div`
