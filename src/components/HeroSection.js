@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 // Import the profile image
 import profile from '../assets/profile1.jpg';  // Adjust the path based on where your image is located
-
+// import leftpic from '../assets/AOT.png'; 
+// import rightpic from '../assets/AOT1.png'; 
 // Styled component for the Hero container
 const HeroContainer = styled.div`
   height: 100vh;
@@ -46,6 +47,20 @@ const Paragraph = styled.p`
   line-height: 1.6; /* Increased line-height for better readability */
   letter-spacing: 0.5px;  /* Slight letter-spacing for clarity */
 `;
+// const Image = styled.img`
+//   position: absolute;
+//   width: 382px; // Adjust the width as needed
+// `;
+
+// const RightImage = styled(Image)`
+//   right: 1px;
+//   bottom: 10px;
+// `;
+
+// const LeftImage = styled(Image)`
+//   left: 1px;
+//   bottom: -100px;
+// `;
 
 // Hero section component
 const HeroSection = () => {
@@ -56,7 +71,10 @@ const HeroSection = () => {
         <Heading>Hello, I'm ALTHAF N</Heading>
         <Paragraph>I am a passionate Software Developer, eager to learn and create amazing web applications. I specialize in building dynamic and interactive websites with modern technologies.</Paragraph>
       </div>
+      {/* <LeftImage src={leftpic} alt="Left Side Image" />
+      <RightImage  src={rightpic} alt="right Side Image" /> */}
     </HeroContainer>
+    
   );
 };
 

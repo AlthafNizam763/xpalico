@@ -8,7 +8,7 @@ import Projects from './components/Projects';
 import Resume from './components/Resume';
 import Contact from './components/Contact';
 import Location from './components/location';
-import Message from './components/componets2/Message';
+import Message from './componets2/Message';
 import Footer from './components/Footer';
 
 function App() {
