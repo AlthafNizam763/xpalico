@@ -1,12 +1,10 @@
 {
   "files": {
     "main.css": "/xpalico/static/css/main.d33d1006.css",
-    "main.js": "/xpalico/static/js/main.a07db14f.js",
+    "main.js": "/xpalico/static/js/main.40cce7f9.js",
     "static/js/453.ed3810f9.chunk.js": "/xpalico/static/js/453.ed3810f9.chunk.js",
     "static/media/logo2.gif": "/xpalico/static/media/logo2.5e51620cd91d8fd5df1e.gif",
-    "static/media/Miky.png": "/xpalico/static/media/Miky.459186976c454707bfea.png",
     "static/media/pain.png": "/xpalico/static/media/pain.91b804c42138772abd30.png",
-    "static/media/Minato.png": "/xpalico/static/media/Minato.73e389aab6aab7405e87.png",
     "static/media/profile1.jpg": "/xpalico/static/media/profile1.3eb328348260a7a437b7.jpg",
     "static/media/eee.png": "/xpalico/static/media/eee.16c26ca8947467e7bbec.png",
     "static/media/Fuel Delivery.jpeg": "/xpalico/static/media/Fuel Delivery.252a525db499c0852cd3.jpeg",
@@ -14,11 +12,11 @@
     "static/media/Portfolio.png": "/xpalico/static/media/Portfolio.a5e783fdc68281baa67e.png",
     "index.html": "/xpalico/index.html",
     "main.d33d1006.css.map": "/xpalico/static/css/main.d33d1006.css.map",
-    "main.a07db14f.js.map": "/xpalico/static/js/main.a07db14f.js.map",
+    "main.40cce7f9.js.map": "/xpalico/static/js/main.40cce7f9.js.map",
     "453.ed3810f9.chunk.js.map": "/xpalico/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d33d1006.css",
-    "static/js/main.a07db14f.js"
+    "static/js/main.40cce7f9.js"
   ]
 }
