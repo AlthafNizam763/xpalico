@@ -4,15 +4,14 @@ import * as React from "react";
 const FooterHero: React.FC = () => (
   <section className="flex flex-col items-center max-w-full text-center w-[456px]">
     <header className="flex flex-col items-center w-full">
-      <h2 className="text-6xl font-semibold text-neutral-900 max-md:text-4xl">What's next</h2>
+      <h2 className="text-6xl font-semibold text-neutral-900 max-md:text-4xl">What's next!</h2>
       <p className="mt-2 text-base tracking-wide leading-6 text-black max-md:max-w-full">
-        Submit better job app — 10x faster. AI cover letter generator, resume keyword checker,
-        outreach message writer, and more. Powered by GPT
+        Submit better job and build your dreams
       </p>
     </header>
-    <button className="gap-2.5 self-stretch px-8 py-3 mt-6 text-base font-semibold tracking-normal leading-none text-black rounded-xl border border-solid border-neutral-900 min-h-11 max-md:px-5 hover:bg-black hover:text-white transition">
+    {/* <button className="gap-2.5 self-stretch px-8 py-3 mt-6 text-base font-semibold tracking-normal leading-none text-black rounded-xl border border-solid border-neutral-900 min-h-11 max-md:px-5 hover:bg-black hover:text-white transition">
       Try For Free
-    </button>
+    </button> */}
   </section>
 );
 
@@ -58,25 +57,25 @@ const FooterSocialMedia: React.FC = () => (
 // --- Footer Menu (All Sections) ---
 const FooterMenu: React.FC = () => {
   const platformItems = [
-    "Plans and Prices",
-    "AI Create Letters",
-    "AI Resume Checker",
-    "Resume Templates",
-    "Sell Templates",
-    "Blog",
+    // "Plans and Prices",
+    // "AI Create Letters",
+    // "AI Resume Checker",
+    // "Resume Templates",
+    // "Sell Templates",
+    // "Blog",
   ];
 
   const featuresItems = [
-    "AI Cover Letter Creator",
-    "Resume Keywords Optimizer",
-    "ATS Resume Checker",
+    // "AI Cover Letter Creator",
+    // "Resume Keywords Optimizer",
+    // "ATS Resume Checker",
   ];
 
   const resourcesItems = [
-    "4 AI Tools for Applying a Job",
-    "How to optimize Resume keywords",
-    "Why you should use Chat GPT for create Resume",
-    "What should you include in a Cover Letter",
+    // "4 AI Tools for Applying a Job",
+    // "How to optimize Resume keywords",
+    // "Why you should use Chat GPT for create Resume",
+    // "What should you include in a Cover Letter",
   ];
 
   return (
@@ -88,7 +87,7 @@ const FooterMenu: React.FC = () => {
         <div className="self-start text-black whitespace-nowrap">
           <h3 className="text-xl font-medium leading-tight">Support</h3>
           <address className="mt-4 text-base tracking-wide leading-none not-italic">
-            support@gmail.com
+            alraravuthar012@gmail.com
           </address>
         </div>
         <FooterSocialMedia />

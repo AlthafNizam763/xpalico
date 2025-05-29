@@ -49,7 +49,7 @@ const HeroSection = () => {
         Submit better job and build your dreams
       </p>
 
-      <div className="flex gap-1 items-center py-2 pr-0 pl-4 w-full rounded-2xl border border-solid bg-neutral-900 border-neutral-400 max-w-[567px] max-sm:flex-col max-sm:gap-4 max-sm:p-4 max-sm:max-w-full">
+      {/* <div className="flex gap-1 items-center py-2 pr-0 pl-4 w-full rounded-2xl border border-solid bg-neutral-900 border-neutral-400 max-w-[567px] max-sm:flex-col max-sm:gap-4 max-sm:p-4 max-sm:max-w-full">
         <div className="flex justify-between items-center py-0 pr-2 pl-6 w-full flex-[1_0_0] max-sm:flex-col max-sm:gap-4 max-sm:p-0">
           <label htmlFor="email" className="text-lg leading-6 text-neutral-400 max-sm:text-center">
             Your Email
@@ -58,7 +58,7 @@ const HeroSection = () => {
             Start For Free
           </button>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

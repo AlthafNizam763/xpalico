@@ -42,7 +42,7 @@ function App() {
         <Route path="/message" element={<Message />} /> */}
       </Routes>
       <AboutMe/>
-      <Projects/>
+      {/* <Projects/> */}
       <Message/>
       <Footer />
     </Router>

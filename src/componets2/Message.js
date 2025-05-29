@@ -12,18 +12,18 @@ const ResumeDesignSection: React.FC = () => {
         {/* Text Content */}
         <div className="w-full max-w-xl text-center lg:text-left">
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-            Free resume design templates
+            Create website for you
           </h1>
           <p className="text-neutral-400 text-base md:text-lg leading-6 mb-8">
-            By following these design tips, you can create a professional and effective resume that will help you stand out to recruiters and hiring managers.
+            We help you build a modern, responsive, and professional website tailored to your brand or portfolio—no tech skills needed. Launch your online presence easily!
           </p>
           <div className="flex justify-center lg:justify-start">
-            <button
+            {/* <button
               onClick={handleCreateAccount}
               className="px-6 py-3 bg-black border border-green-400 text-white rounded-full font-semibold hover:bg-green-400 hover:text-black transition"
             >
               Create an Account
-            </button>
+            </button> */}
           </div>
         </div>
 
