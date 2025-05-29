@@ -31,15 +31,16 @@ function App() {
   return (
     <Router>
       <Navbar />
-      {/* <Routes>
-        <Route path="/" element={<HeroSection />} />
-        <Route path="/about" element={<AboutMe />} />
+      {/* <HeroSection /> */}
+      <Routes>
+        {/* <Route path="/" element={<HeroSection />} /> */}
+        {/* <Route path="/about" element={<AboutMe />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/resume" element={<Resume />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/location" element={<Location />} />
-        <Route path="/message" element={<Message />} />
-      </Routes> */}
+        <Route path="/message" element={<Message />} /> */}
+      </Routes>
       <AboutMe/>
       <Projects/>
       <Message/>

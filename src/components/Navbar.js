@@ -1,12 +1,15 @@
 "use client";
 import React from 'react';
-import { LogoIcon, FileIcon, RadioIcon, MaximizeIcon } from '../components/ui/Icons';
+import logoImage from '../assets/33.jpeg';
+import fileIconImg from '../assets/32.jpeg';
+import radioIconImg from '../assets/30.jpeg';
+import maximizeIconImg from '../assets/31.jpeg';
 
 const Header = () => {
   return (
     <header className="box-border flex relative justify-between items-center px-28 pt-16 pb-4 w-full bg-neutral-900 max-md:px-14 max-md:pt-8 max-md:pb-4 max-sm:flex-row max-sm:justify-between max-sm:px-5 max-sm:py-4">
       <div className="flex gap-1 justify-center items-center p-3 rounded-[100px]">
-        <LogoIcon />
+        <img src={logoImage} alt="Logo" className="w-10 h-10 rounded-full" />
         <span className="text-base font-medium tracking-wide text-white">MoRe Experts</span>
       </div>
 
@@ -23,10 +26,10 @@ const Header = () => {
       </nav>
 
       <div className="flex gap-4 items-start max-sm:gap-2">
-        <button className="gap-2.5 px-8 py-3 text-base font-semibold tracking-normal leading-5 text-center text-white rounded-xl border border-green-400 border-solid cursor-pointer max-sm:px-4 max-sm:py-2 max-sm:text-sm  hover:bg-green-400 hover:text-black transition">
+        <button className="gap-2.5 px-8 py-3 text-base font-semibold tracking-normal leading-5 text-center text-white rounded-xl border border-green-400 border-solid cursor-pointer max-sm:px-4 max-sm:py-2 max-sm:text-sm hover:bg-green-400 hover:text-black transition">
           Sign In
         </button>
-        <button className="gap-2.5 px-8 py-3 text-base font-semibold tracking-normal leading-5 text-center text-black bg-green-400  rounded-xl cursor-pointer max-sm:px-4 max-sm:py-2 max-sm:text-sm hover:bg-black hover:text-white transition">
+        <button className="gap-2.5 px-8 py-3 text-base font-semibold tracking-normal leading-5 text-center text-black bg-green-400 rounded-xl cursor-pointer max-sm:px-4 max-sm:py-2 max-sm:text-sm hover:bg-black hover:text-white transition">
           Get Started
         </button>
       </div>
@@ -43,9 +46,7 @@ const HeroSection = () => {
       </h1>
 
       <p className="w-full text-base tracking-wide leading-6 text-center max-w-[474px] text-neutral-400 max-sm:text-sm max-sm:leading-5">
-        Submit better job app — 10x faster. AI cover letter generator,
-        resume keyword checker, outreach message writer, and more. Powered
-        by GPT
+        Submit better job and build your dreams
       </p>
 
       <div className="flex gap-1 items-center py-2 pr-0 pl-4 w-full rounded-2xl border border-solid bg-neutral-900 border-neutral-400 max-w-[567px] max-sm:flex-col max-sm:gap-4 max-sm:p-4 max-sm:max-w-full">
@@ -63,7 +64,7 @@ const HeroSection = () => {
 };
 
 interface FeatureCardProps {
-  icon: React.ReactNode;
+  icon: string;
   title: string;
   description: string;
 }
@@ -71,7 +72,7 @@ interface FeatureCardProps {
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) => {
   return (
     <article className="box-border flex flex-col gap-4 items-start p-6 w-full rounded-xl bg-stone-900 max-w-[361px] max-md:max-w-full max-sm:max-w-full">
-      <div>{icon}</div>
+      <img src={icon} alt={`${title} icon`} className="w-12 h-12 rounded-md" />
       <h3 className="text-base font-semibold tracking-wide leading-5 text-white">
         {title}
       </h3>
@@ -85,20 +86,19 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
 const FeatureCards = () => {
   const features = [
     {
-      icon: <FileIcon />,
+      icon: fileIconImg,
       title: "Resume",
-      description: "A resume scanner is a software application that uses optical character recognition (OCR) technology to extract and analyze data from resumes."
+      description: "A resume scanner uses OCR and AI to analyze resumes, extract key details, and optimize content for better matching with job descriptions and applicant tracking systems (ATS)."
     },
     {
-      icon: <RadioIcon />,
+      icon: radioIconImg,
       title: "Poster",
-      description: "Smart Personalization refers to the use of data and technology to deliver tailored experiences and content to individual customers or users."
+      description: "This poster highlights key features and benefits, using bold visuals and concise text to capture attention, inform viewers, and inspire action at a glance."
     },
     {
-      icon: <MaximizeIcon />,
+      icon: maximizeIconImg,
       title: "Website",
-      description: "The AI Cover Letter Generator is a tool that uses artificial intelligence algorithms to create personalized cover letters for job applicants."
-
+      description: "Our website offers user-friendly access to services, information, and support, ensuring a seamless experience with secure navigation, modern design, and reliable performance across all devices."
     }
   ];
 
