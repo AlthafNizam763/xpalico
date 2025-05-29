@@ -48,10 +48,18 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.20",
+    "autoprefixer": "^10.4.21",
     "gh-pages": "^6.2.0",
-    "postcss": "^8.4.49",
+    "postcss": "^8.5.4",
     "tailwindcss": "^3.4.17"
   },
-  "homepage": "https://althafnizam763.github.io/xpalico"
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@/*": [
+        "*"
+      ]
+    }
+  },
+  "homepage": "https://althafnizam763.github.io/"
 }

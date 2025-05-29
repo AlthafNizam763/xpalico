@@ -1,81 +1,40 @@
-import React from 'react';
-import styled from 'styled-components';
+"use client";
+import * as React from "react";
 
-// Import the profile image
-import profile from '../assets/profile1.jpg';  // Adjust the path based on where your image is located
-// import leftpic from '../assets/AOT.png'; 
-// import rightpic from '../assets/AOT1.png'; 
-// Styled component for the Hero container
-const HeroContainer = styled.div`
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(to bottom, #f9f9f9, #1c1c1c); /* Gradient background */
-  color: white;
-  text-align: center;
-  flex-direction: column;
-  padding: 0 20px;  /* Padding added for mobile responsiveness */
-`;
-
-// Styled component for the profile image
-const ProfileImage = styled.img`
-  width: 180px; /* Increased the size of the profile image */
-  height: 180px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 5px solid #ffffff; /* Added a white border around the profile image */
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
-  margin-bottom: 30px;  /* Increased margin between image and text */
-`;
-
-// Styled component for the heading
-const Heading = styled.h2`
-  font-weight: bold;  
-  font-size: 2.5em; /* Increased font size */
-  margin-bottom: 10px; /* Added space between heading and paragraph */
-  letter-spacing: 1px; /* Added letter-spacing for a clean, modern feel */
-  text-transform: uppercase; /* Added uppercase styling for a bold statement */
-`;
-
-// Styled component for the paragraph
-const Paragraph = styled.p`
-  font-weight: bold;  
-  font-size: 1.2em; /* Increased font size */
-  max-width: 600px;  /* Set a maximum width for better readability */
-  margin: 0 auto;  /* Center-align the text */
-  line-height: 1.6; /* Increased line-height for better readability */
-  letter-spacing: 0.5px;  /* Slight letter-spacing for clarity */
-`;
-// const Image = styled.img`
-//   position: absolute;
-//   width: 382px; // Adjust the width as needed
-// `;
-
-// const RightImage = styled(Image)`
-//   right: 1px;
-//   bottom: 10px;
-// `;
-
-// const LeftImage = styled(Image)`
-//   left: 1px;
-//   bottom: -100px;
-// `;
-
-// Hero section component
-const HeroSection = () => {
+function AboutSection1() {
   return (
-    <HeroContainer>
-      <ProfileImage src={profile} alt="Profile" />
-      <div>
-        <Heading>Hello, I'm ALTHAF N</Heading>
-        <Paragraph>I am a passionate Software Developer, eager to learn and create amazing web applications. I specialize in building dynamic and interactive websites with modern technologies.</Paragraph>
-      </div>
-      {/* <LeftImage src={leftpic} alt="Left Side Image" />
-      <RightImage  src={rightpic} alt="right Side Image" /> */}
-    </HeroContainer>
-    
-  );
-};
+    <section className="overflow-hidden">
+      <div className="flex overflow-hidden flex-col items-center px-14 pt-14 w-full bg-green-400 rounded-xl max-md:px-5 max-md:max-w-full">
+        
+        {/* Hero Content */}
+        <h1 className="text-5xl font-semibold text-center text-black w-[420px] max-md:text-4xl">
+          Submit Better job applications
+        </h1>
+        <h2 className="z-10 text-9xl font-semibold text-center text-black max-md:max-w-full max-md:text-4xl">
+          10x faster
+        </h2>
+        <p className="-mt-1 text-base tracking-wide leading-6 text-center text-black w-[474px] max-md:max-w-full">
+          AI cover letter generator, resume keyword checker, outreach message
+          writer, and more. Powered by GPT
+        </p>
 
-export default HeroSection;
+        {/* Image Section */}
+        <div className="flex relative flex-col items-start self-stretch px-7 pt-10 pb-96 mt-3 rounded-3xl min-h-[534px] max-md:px-5 max-md:pb-24 max-md:max-w-full">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/28458a2f5cd31cff814c09dfcbfc184f82fb0581?placeholderIfAbsent=true&apiKey=a6f97e95494e4cca9a87f73491cc7921"
+            alt=""
+            className="object-cover absolute inset-0 size-full"
+          />
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/57909f33450cdd0f8d4c36a6e3da74d3a55540a9?placeholderIfAbsent=true&apiKey=a6f97e95494e4cca9a87f73491cc7921"
+            alt=""
+            className="object-contain mb-0 w-10 aspect-square max-md:mb-2.5"
+          />
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+export default AboutSection1;

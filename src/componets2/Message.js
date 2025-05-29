@@ -1,86 +1,43 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom'; // Import NavLink from react-router-dom
-import { FaBong } from 'react-icons/fa'; // Import FaBong from react-icons
-import rightpic from '../assets/eee.png'; // Correctly import the image
-import leftpic from '../assets/pain.png';
-const Message = () => {
-  const containerStyle = {
-    height: '100vh',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#f78c32', // Orange background color
-    color: 'white',
-    textAlign: 'center',
-    fontFamily: 'Arial, sans-serif',
-    position: 'relative',
-  };
+"use client";
+import * as React from "react";
 
-  const titleStyle = {
-    fontSize: '4rem',
-    fontWeight: 'bold',
-    marginBottom: '1rem',
-  };
-
-  const textStyle = {
-    fontSize: '1.5rem',
-    marginBottom: '2rem',
-  };
-
-  const navLinkStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#fff',
-    color: '#f78c32',
-    padding: '0.5rem 1rem',
-    borderRadius: '5px',
-    textDecoration: 'none',
-    fontWeight: 'bold',
-    fontSize: '1.2rem',
-    gap: '0.5rem',
-    transition: '0.3s ease',
-  };
-
-  const navLinkHoverStyle = {
-    backgroundColor: '#f5a561',
-    color: '#fff',
-  };
-
-  const imageStyle = {
-    position: 'absolute',
-    right: '1rem',
-    top: '70%',
-    transform: 'translateY(-50%)',
-    width: '600px', // Adjust image width
-    height: 'auto', // Maintain aspect ratio
-    borderRadius: '10px', // Optional: Add rounded corners
-  };
-  const imageStyleLeft = {
-    position: 'absolute',
-    left: '0rem',
-    top: '53%',
-    transform: 'translateY(-50%)',
-    width: '300px', // Adjust image width
-    height: 'auto', // Maintain aspect ratio
-    borderRadius: '10px', // Optional: Add rounded corners
+const ResumeDesignSection: React.FC = () => {
+  const handleCreateAccount = () => {
+    console.log("Create an Account clicked");
   };
 
   return (
-    <div style={containerStyle}>
-      <h1 style={titleStyle}>Message Me</h1>
-      <p style={textStyle}>This is the Message page where users can send a message.</p>
-      <NavLink
-        to="http://localhost:3001/"
-        style={({ isActive }) => (isActive ? navLinkHoverStyle : navLinkStyle)}
-      >
-        <FaBong /> Bong
-      </NavLink>
-      <img src={rightpic} alt="Right Side Image" style={imageStyle} /> 
-      <img src={leftpic} alt="Left Side Image" style={imageStyleLeft} /> 
-    </div>
+    <section className="bg-black text-white py-16 px-4 md:px-8 flex justify-center">
+      <div className="flex flex-col-reverse lg:flex-row items-center gap-12 max-w-7xl w-full">
+        {/* Text Content */}
+        <div className="w-full max-w-xl text-center lg:text-left">
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+            Free resume design templates
+          </h1>
+          <p className="text-neutral-400 text-base md:text-lg leading-6 mb-8">
+            By following these design tips, you can create a professional and effective resume that will help you stand out to recruiters and hiring managers.
+          </p>
+          <div className="flex justify-center lg:justify-start">
+            <button
+              onClick={handleCreateAccount}
+              className="px-6 py-3 bg-black border border-green-400 text-white rounded-full font-semibold hover:bg-green-400 hover:text-black transition"
+            >
+              Create an Account
+            </button>
+          </div>
+        </div>
+
+        {/* Illustration */}
+        <div className="w-full max-w-xl">
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/a80bcfb6ecd8b5e31aedcdbcbc95b1407c2130b9?placeholderIfAbsent=true&apiKey=6e2cc41a9940411dacbf8c84ca7be0f5"
+            alt="Resume design illustration"
+            className="w-full h-auto object-contain"
+          />
+        </div>
+      </div>
+    </section>
   );
 };
 
-export default Message;
+export default ResumeDesignSection;

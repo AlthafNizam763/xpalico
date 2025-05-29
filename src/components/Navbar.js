@@ -1,121 +1,131 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import profile from '../assets/logo2.gif'; 
-import { FaHome, FaUser, FaProjectDiagram, FaComment, FaLocationArrow, FaEnvelope,FaAddressCard, FaBong } from 'react-icons/fa'; // Added location and envelope icons
+"use client";
+import React from 'react';
+import { LogoIcon, FileIcon, RadioIcon, MaximizeIcon } from '../components/ui/Icons';
 
-// Styled components for Navbar container and links
-const NavbarContainer = styled.nav`
-  background-color: #1c1c1c; /* Darker background for contrast */
-  padding: 10px 30px; /* Increased padding for better spacing */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adding a shadow for a sleek look */
-`;
-
-const NavLinks = styled.div`
-  display: flex;
-  gap: 25px; /* Increased gap for spacing between links */
-`;
-
-const Logo = styled.img`
-  width: 130px; /* Adjusted logo size */
-  height: auto;
-  border-radius: 50%; /* Added circular shape to the logo */
-  margin-left: 10px;
-`;
-
-const NavLink = styled(Link)`
-  color: #ffffff; /* White text color */
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.3em; /* Increased font size for better readability */
-  display: flex;
-  align-items: center;
-  gap: 8px; /* Adjusted gap between icon and text */
-  transition: color 0.3s ease, transform 0.3s ease; /* Added transition for scaling effect */
-
-  &:hover {
-    color: #00d1b2; /* Hover color */
-    transform: scale(1.1); /* Slight scale effect on hover */
-  }
-`;
-
-const TakeMeDropdown = styled.div`
-  position: relative;
-  
-  &:hover {
-    & > div {
-      display: flex; /* Show the dropdown on hover */
-    }
-  }
-`;
-
-const DropdownIcons = styled.div`
-  display: ${({ show }) => (show ? 'flex' : 'none')};
-  gap: 15px;
-  position: absolute;
-  top: 30px;
-  left: 0;
-  background-color: #1c1c1c;
-  padding: 5px 10px;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adding shadow for a dropdown look */
-`;
-
-const DropdownIcon = styled(Link)`
-  color: #ffffff;
-  font-size: 1.5em;
-  display: flex;
-  align-items: center;
-  transition: color 0.3s ease, transform 0.3s ease;
-
-  &:hover {
-    color: #00d1b2;
-    transform: scale(1.1);
-  }
-`;
-
-// Navbar component
-const Navbar = () => {
-  const [showDropdown, setShowDropdown] = useState(false);
-
+const Header = () => {
   return (
-    <NavbarContainer>
-      <Logo src={profile} alt="Profile" />
-      <NavLinks>
-        <NavLink to="/">
-          <FaHome /> Home
-        </NavLink>
-        <NavLink to="/about">
-          <FaUser /> About
-        </NavLink>
-        <NavLink to="/projects">
-          <FaProjectDiagram /> Projects
-        </NavLink>
-        <NavLink to="/resume">
-          <FaAddressCard /> Resume
-        </NavLink>
-        <TakeMeDropdown>
-          <NavLink to="#" onClick={() => setShowDropdown(!showDropdown)}>
-            <FaComment /> Get In Touch
-          </NavLink>
-          <DropdownIcons show={showDropdown}>
-            <DropdownIcon to="/contact">
-              <FaEnvelope />  
-            </DropdownIcon>
-            <DropdownIcon to="/location">
-              <FaLocationArrow />   
-            </DropdownIcon>
-          </DropdownIcons>
-        </TakeMeDropdown>
-        <NavLink to="/message">
-          <FaBong /> Bong
-        </NavLink>
-      </NavLinks>
-    </NavbarContainer>
+    <header className="box-border flex relative justify-between items-center px-28 pt-16 pb-4 w-full bg-neutral-900 max-md:px-14 max-md:pt-8 max-md:pb-4 max-sm:flex-row max-sm:justify-between max-sm:px-5 max-sm:py-4">
+      <div className="flex gap-1 justify-center items-center p-3 rounded-[100px]">
+        <LogoIcon />
+        <span className="text-base font-medium tracking-wide text-white">MoRe Experts</span>
+      </div>
+
+      <nav className="flex absolute left-2/4 gap-6 items-start -translate-x-2/4 max-md:hidden max-sm:hidden">
+        <a href="#" className="text-base font-semibold tracking-wide leading-5 cursor-pointer text-neutral-400">
+          Resume
+        </a>
+        <a href="#" className="text-base font-semibold tracking-wide leading-5 cursor-pointer text-neutral-400">
+          Poster
+        </a>
+        <a href="#" className="text-base font-semibold tracking-wide leading-5 cursor-pointer text-neutral-400">
+          Website
+        </a>
+      </nav>
+
+      <div className="flex gap-4 items-start max-sm:gap-2">
+        <button className="gap-2.5 px-8 py-3 text-base font-semibold tracking-normal leading-5 text-center text-white rounded-xl border border-green-400 border-solid cursor-pointer max-sm:px-4 max-sm:py-2 max-sm:text-sm  hover:bg-green-400 hover:text-black transition">
+          Sign In
+        </button>
+        <button className="gap-2.5 px-8 py-3 text-base font-semibold tracking-normal leading-5 text-center text-black bg-green-400  rounded-xl cursor-pointer max-sm:px-4 max-sm:py-2 max-sm:text-sm hover:bg-black hover:text-white transition">
+          Get Started
+        </button>
+      </div>
+    </header>
   );
 };
 
-export default Navbar;
+const HeroSection = () => {
+  return (
+    <section className="flex flex-col gap-5 items-center text-center">
+      <h1 className="w-full text-8xl font-semibold text-center max-w-[852px] max-md:text-6xl max-sm:text-5xl max-sm:leading-none">
+        <span className="text-green-400">Win your dream & job</span>
+        <span className="text-white"> with MoRe Experts</span>
+      </h1>
+
+      <p className="w-full text-base tracking-wide leading-6 text-center max-w-[474px] text-neutral-400 max-sm:text-sm max-sm:leading-5">
+        Submit better job app — 10x faster. AI cover letter generator,
+        resume keyword checker, outreach message writer, and more. Powered
+        by GPT
+      </p>
+
+      <div className="flex gap-1 items-center py-2 pr-0 pl-4 w-full rounded-2xl border border-solid bg-neutral-900 border-neutral-400 max-w-[567px] max-sm:flex-col max-sm:gap-4 max-sm:p-4 max-sm:max-w-full">
+        <div className="flex justify-between items-center py-0 pr-2 pl-6 w-full flex-[1_0_0] max-sm:flex-col max-sm:gap-4 max-sm:p-0">
+          <label htmlFor="email" className="text-lg leading-6 text-neutral-400 max-sm:text-center">
+            Your Email
+          </label>
+          <button className="gap-2.5 px-8 py-3 text-base font-semibold tracking-normal leading-5 text-center text-gray-800 bg-green-400 rounded-xl cursor-pointer max-sm:w-full hover:bg-black hover:text-white transition">
+            Start For Free
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+interface FeatureCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}
+
+const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) => {
+  return (
+    <article className="box-border flex flex-col gap-4 items-start p-6 w-full rounded-xl bg-stone-900 max-w-[361px] max-md:max-w-full max-sm:max-w-full">
+      <div>{icon}</div>
+      <h3 className="text-base font-semibold tracking-wide leading-5 text-white">
+        {title}
+      </h3>
+      <p className="w-full text-base tracking-wide leading-6 max-w-[313px] text-neutral-400">
+        {description}
+      </p>
+    </article>
+  );
+};
+
+const FeatureCards = () => {
+  const features = [
+    {
+      icon: <FileIcon />,
+      title: "Resume",
+      description: "A resume scanner is a software application that uses optical character recognition (OCR) technology to extract and analyze data from resumes."
+    },
+    {
+      icon: <RadioIcon />,
+      title: "Poster",
+      description: "Smart Personalization refers to the use of data and technology to deliver tailored experiences and content to individual customers or users."
+    },
+    {
+      icon: <MaximizeIcon />,
+      title: "Website",
+      description: "The AI Cover Letter Generator is a tool that uses artificial intelligence algorithms to create personalized cover letters for job applicants."
+
+    }
+  ];
+
+  return (
+    <section className="flex flex-wrap gap-8 justify-center items-start w-full max-md:gap-6 max-sm:flex-col max-sm:gap-4">
+      {features.map((feature, index) => (
+        <FeatureCard
+          key={index}
+          icon={feature.icon}
+          title={feature.title}
+          description={feature.description}
+        />
+      ))}
+    </section>
+  );
+};
+
+const LandingPage = () => {
+  return (
+    <main className="flex flex-col gap-20 items-center pb-16 w-full bg-neutral-900 min-h-[910px]">
+      <Header />
+      <div className="flex flex-col gap-14 items-center px-5 py-0 mx-auto my-0 w-full max-w-[1147px]">
+        <HeroSection />
+        <FeatureCards />
+      </div>
+    </main>
+  );
+};
+
+export default LandingPage;
