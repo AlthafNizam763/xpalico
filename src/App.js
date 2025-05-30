@@ -1,11 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Login from './components/Login';
+import Login from './componets2/Login';
+import DashBoard from './componets2/DashBoard';
+import Messages from './componets2/Messages';
 import Resume from './components/Resume';
 import HeroSection from './components/HeroSection';
 import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
-// import Message from './components2/Message';
+import Message from './components/Message';
 import Footer from './components/Footer';
 
 function App() {
@@ -13,8 +15,10 @@ function App() {
     <Router>
       <Routes>
         <Route path="/login" element={<Login />} />
+         <Route path="/dashboard" element={<DashBoard />} />
+         <Route path="/messages" element={<Messages />} />
         <Route
-          path="/"
+          path="/xpalico"
           element={
             <>
              <Navbar />
@@ -22,7 +26,7 @@ function App() {
               <HeroSection />
               <AboutMe />
               <Projects />
-              {/* <Message /> */}
+              <Message />
               <Footer />
             </>
           }
