@@ -20,7 +20,7 @@ const AuthPage = () => {
   };
 
   const handleLogin = () => {
-    if (form.email === 'moreexperts' && form.password === '123abcAB') {
+    if (form.email === 'bondi' && form.password === '123abcAB') {
       alert('Login successful!');
       navigate('/dashboard');
     } else {
