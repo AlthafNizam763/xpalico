@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import logoImage from '../assets/34.jpeg';
 
 const Header = () => {
@@ -11,28 +12,24 @@ const Header = () => {
       </div>
 
       <nav className="flex absolute left-2/4 gap-6 items-start -translate-x-2/4 max-md:hidden max-sm:hidden">
-        <a href="#" className="text-base font-semibold tracking-wide leading-5 cursor-pointer text-neutral-400">
-          Resume
-        </a>
-        <a href="#" className="text-base font-semibold tracking-wide leading-5 cursor-pointer text-neutral-400">
-          Poster
-        </a>
-        <a href="#" className="text-base font-semibold tracking-wide leading-5 cursor-pointer text-neutral-400">
-          Website
-        </a>
+        <a href="#" className="text-base font-semibold tracking-wide leading-5 cursor-pointer text-neutral-400">Resume</a>
+        <a href="#" className="text-base font-semibold tracking-wide leading-5 cursor-pointer text-neutral-400">Poster</a>
+        <a href="#" className="text-base font-semibold tracking-wide leading-5 cursor-pointer text-neutral-400">Website</a>
       </nav>
 
       <div className="flex gap-4 items-start max-sm:gap-2">
-        <button className="gap-2.5 px-8 py-3 text-base font-semibold tracking-normal leading-5 text-center text-white rounded-xl border border-green-400 border-solid cursor-pointer max-sm:px-4 max-sm:py-2 max-sm:text-sm hover:bg-green-400 hover:text-black transition">
+        <NavLink
+          to="/login"
+          className="gap-2.5 px-8 py-3 text-base font-semibold tracking-normal leading-5 text-center text-white rounded-xl border border-[#6DE754] border-solid cursor-pointer max-sm:px-4 max-sm:py-2 max-sm:text-sm hover:bg-[#6DE754] hover:text-black transition"
+        >
           Sign In
-        </button>
-        <button className="gap-2.5 px-8 py-3 text-base font-semibold tracking-normal leading-5 text-center text-black bg-green-400 rounded-xl cursor-pointer max-sm:px-4 max-sm:py-2 max-sm:text-sm hover:bg-black hover:text-white transition">
+        </NavLink>
+        <button className="gap-2.5 px-8 py-3 text-base font-semibold tracking-normal leading-5 text-center text-black bg-[#6DE754] rounded-xl cursor-pointer max-sm:px-4 max-sm:py-2 max-sm:text-sm hover:bg-black hover:text-white transition">
           Get Started
         </button>
       </div>
     </header>
   );
 };
-
 
 export default Header;
