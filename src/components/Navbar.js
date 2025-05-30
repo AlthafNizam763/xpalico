@@ -19,7 +19,7 @@ const Header = () => {
 
       <div className="flex gap-4 items-start max-sm:gap-2">
         <NavLink
-          to="/login"
+          // to="/login"
           className="gap-2.5 px-8 py-3 text-base font-semibold tracking-normal leading-5 text-center text-white rounded-xl border border-[#6DE754] border-solid cursor-pointer max-sm:px-4 max-sm:py-2 max-sm:text-sm hover:bg-[#6DE754] hover:text-black transition"
         >
           Sign In
