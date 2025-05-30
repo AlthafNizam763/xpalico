@@ -78,7 +78,7 @@ const OptimizeSection: React.FC = () => {
 // --- Main Page Component ---
 const InputDesign: React.FC = () => {
   return (
-    <main className="box-border flex flex-col justify-center items-center px-60 py-10 mx-auto w-full max-w-none bg-green-400 min-h-[1080px] max-md:px-16 max-md:py-10 max-md:max-w-[991px] max-sm:p-5 max-sm:max-w-screen-sm">
+    <main className="box-border flex flex-col justify-center items-center px-60 py-10 mx-auto w-full max-w-none bg-[#6DE754] min-h-[1080px] max-md:px-16 max-md:py-10 max-md:max-w-[991px] max-sm:p-5 max-sm:max-w-screen-sm">
       <link
         href="https://fonts.googleapis.com/css2?family=SF+Pro+Text:wght@400;600&display=swap"
         rel="stylesheet"

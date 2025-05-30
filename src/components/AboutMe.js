@@ -33,7 +33,7 @@ const HeroSection = () => {
       <p className="text-base tracking-wide leading-5 text-center text-neutral-400 w-[358px] max-md:w-full max-md:max-w-[358px] max-sm:text-sm max-sm:leading-5">
         We'll help you through the hardest part of your job search.
       </p>
-      {/* <button className="gap-2.5 px-8 py-3 text-base font-semibold tracking-normal leading-5 text-center text-white rounded-xl border border-green-400 border-solid cursor-pointer max-sm:w-full max-sm:max-w-[300px] hover:bg-green-400 hover:text-black transition">
+      {/* <button className="gap-2.5 px-8 py-3 text-base font-semibold tracking-normal leading-5 text-center text-white rounded-xl border border-[#6DE754] border-solid cursor-pointer max-sm:w-full max-sm:max-w-[300px] hover:bg-[#6DE754] hover:text-black transition">
         Create an Account
       </button> */}
     </header>

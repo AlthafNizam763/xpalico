@@ -114,7 +114,7 @@ const FooterCopyright: React.FC = () => (
 const Footer: React.FC = () => {
   return (
     <footer className="overflow-hidden">
-      <div className="flex flex-col items-center pt-12 pb-20 w-full bg-green-400 max-md:max-w-full">
+      <div className="flex flex-col items-center pt-12 pb-20 w-full bg-[#6DE754] max-md:max-w-full">
         <div className="flex flex-col items-center max-w-full w-[1126px]">
           <FooterHero />
           <FooterMenu />

@@ -20,7 +20,7 @@ const ResumeDesignSection: React.FC = () => {
           <div className="flex justify-center lg:justify-start">
             {/* <button
               onClick={handleCreateAccount}
-              className="px-6 py-3 bg-black border border-green-400 text-white rounded-full font-semibold hover:bg-green-400 hover:text-black transition"
+              className="px-6 py-3 bg-black border border-[#6DE754] text-white rounded-full font-semibold hover:bg-[#6DE754] hover:text-black transition"
             >
               Create an Account
             </button> */}

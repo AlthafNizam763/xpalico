@@ -1,175 +1,97 @@
-// import React from 'react';
-// import styled from 'styled-components';
-// import { FaDownload } from 'react-icons/fa';
-// import profile from '../assets/profile1.jpg'; 
+"use client";
+import React from 'react';
+import fileIconImg from '../assets/32.jpeg';
+import radioIconImg from '../assets/30.jpeg';
+import maximizeIconImg from '../assets/31.jpeg';
+const HeroSection = () => {
+  return (
+    <section className="flex flex-col gap-5 items-center text-center">
+      <h1 className="w-full text-8xl font-semibold text-center max-w-[852px] max-md:text-6xl max-sm:text-5xl max-sm:leading-none">
+        <span className="text-[#6DE754]">Win your dream & job</span>
+        <span className="text-white"> with MoRe Experts</span>
+      </h1>
 
-// // Styled Components
-// const ResumeContainer = styled.div`
-//   font-family: 'Arial', sans-serif;
-//   background-color: #f9f9f9;
-//   color: #333;
-//   padding: 40px;
-//   max-width: 800px;
-//   margin: 20px auto;
-//   border-radius: 10px;
-//   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-//   line-height: 1.6;
-// `;
+      <p className="w-full text-base tracking-wide leading-6 text-center max-w-[474px] text-neutral-400 max-sm:text-sm max-sm:leading-5">
+        Submit better job and build your dreams
+      </p>
 
-// const Heading = styled.h1`
-//   font-size: 2.8rem;
-//   text-align: center;
-//   font-weight: bold;
-//   color: #222;
-//   margin-bottom: 10px;
-// `;
+      {/* <div className="flex gap-1 items-center py-2 pr-0 pl-4 w-full rounded-2xl border border-solid bg-neutral-900 border-neutral-400 max-w-[567px] max-sm:flex-col max-sm:gap-4 max-sm:p-4 max-sm:max-w-full">
+        <div className="flex justify-between items-center py-0 pr-2 pl-6 w-full flex-[1_0_0] max-sm:flex-col max-sm:gap-4 max-sm:p-0">
+          <label htmlFor="email" className="text-lg leading-6 text-neutral-400 max-sm:text-center">
+            Your Email
+          </label>
+          <button className="gap-2.5 px-8 py-3 text-base font-semibold tracking-normal leading-5 text-center text-gray-800 bg-[#6DE754] rounded-xl cursor-pointer max-sm:w-full hover:bg-black hover:text-white transition">
+            Start For Free
+          </button>
+        </div>
+      </div> */}
+    </section>
+  );
+};
 
-// const SubHeading = styled.h2`
-//   font-size: 1.4rem;
-//   text-align: center;
-//   color: #555;
-//   margin-bottom: 30px;
-// `;
+interface FeatureCardProps {
+  icon: string;
+  title: string;
+  description: string;
+}
 
-// const SectionTitle = styled.h2`
-//   font-size: 1.8rem;
-//   color: #111;
-//   margin-top: 40px;
-//   border-bottom: 2px solid #333;
-//   padding-bottom: 5px;
-// `;
+const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) => {
+  return (
+    <article className="box-border flex flex-col gap-4 items-start p-6 w-full rounded-xl bg-stone-900 max-w-[361px] max-md:max-w-full max-sm:max-w-full">
+      <img src={icon} alt={`${title} icon`} className="w-12 h-12 rounded-md" />
+      <h3 className="text-base font-semibold tracking-wide leading-5 text-white">
+        {title}
+      </h3>
+      <p className="w-full text-base tracking-wide leading-6 max-w-[313px] text-neutral-400">
+        {description}
+      </p>
+    </article>
+  );
+};
 
-// const List = styled.ul`
-//   list-style: none;
-//   padding: 0;
-// `;
+const FeatureCards = () => {
+  const features = [
+    {
+      icon: fileIconImg,
+      title: "Resume",
+      description: "A resume scanner uses OCR and AI to analyze resumes, extract key details, and optimize content for better matching with job descriptions and applicant tracking systems (ATS)."
+    },
+    {
+      icon: radioIconImg,
+      title: "Poster",
+      description: "This poster highlights key features and benefits, using bold visuals and concise text to capture attention, inform viewers, and inspire action at a glance."
+    },
+    {
+      icon: maximizeIconImg,
+      title: "Website",
+      description: "Our website offers user-friendly access to services, information, and support, ensuring a seamless experience with secure navigation, modern design, and reliable performance across all devices."
+    }
+  ];
 
-// const ListItem = styled.li`
-//   margin-bottom: 20px;
-//   font-size: 1.1rem;
-//   color: #444;
-// `;
+  return (
+    <section className="flex flex-wrap gap-8 justify-center items-start w-full max-md:gap-6 max-sm:flex-col max-sm:gap-4">
+      {features.map((feature, index) => (
+        <FeatureCard
+          key={index}
+          icon={feature.icon}
+          title={feature.title}
+          description={feature.description}
+        />
+      ))}
+    </section>
+  );
+};
 
-// const ProfileContainer = styled.div`
-//   display: flex;
-//   align-items: center;
-//   justify-content: space-between;
-//   margin-bottom: 30px;
-//   padding-bottom: 20px;
-//   border-bottom: 2px solid #ccc;
-// `;
+const LandingPage = () => {
+  return (
+    <main className="flex flex-col gap-20 items-center pb-16 w-full bg-neutral-900 min-h-[910px]">
+      {/* <Header /> */}
+      <div className="flex flex-col gap-14 items-center px-5 py-0 mx-auto my-0 w-full max-w-[1147px]">
+        <HeroSection />
+        <FeatureCards />
+      </div>
+    </main>
+  );
+};
 
-// const ProfilePic = styled.img`
-//   border-radius: 50%;
-//   width: 100px;
-//   height: 100px;
-//   margin-right: 20px;
-//   border: 3px solid #222;
-// `;
-
-// const ContactDetails = styled.div`
-//   font-size: 1.1rem;
-//   text-align: right;
-// `;
-
-// const ContactItem = styled.p`
-//   margin: 5px 0;
-// `;
-
-// // Download Button Styled as Circle and Positioned at the Bottom-Right
-// const DownloadButton = styled.a`
-//   position: fixed;
-//   bottom: 30px;
-//   right: 30px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   width: 70px;
-//   height: 70px;
-//   background-color: #111;
-//   color: white;
-//   font-size: 2rem;
-//   border-radius: 50%;
-//   text-decoration: none;
-//   transition: all 0.3s ease;
-//   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-
-//   &:hover {
-//     background-color: #555;
-//     transform: translateY(-2px);
-//   }
-
-//   svg {
-//     margin-left: 0;
-//   }
-// `;
-
-// const Resume = () => {
-//   return (
-//     <ResumeContainer>
-//       <Heading>Althaf Nizam</Heading>
-//       <SubHeading>Full-stack Developer</SubHeading>
-
-//       <ProfileContainer>
-//         <ProfilePic src={profile} alt="Profile" />
-//         <ContactDetails>
-//           <ContactItem>Email: althafnizam@gmail.com</ContactItem>
-//           <ContactItem>Phone: 9633146330</ContactItem>
-//           <ContactItem>Location: Ayur, Kollam, Kerala</ContactItem>
-//           <ContactItem>Website: www.xpalico.com</ContactItem>
-//         </ContactDetails>
-//       </ProfileContainer>
-
-//       <SectionTitle>Skills</SectionTitle>
-//       <List>
-//         <ListItem> HTML, CSS, Bootstrap, JavaScript, React, Node.js</ListItem>
-//         <ListItem>MySQL</ListItem>
-//         <ListItem>Frameworks</ListItem>
-//         <ListItem>Git, GitHub, Version Control</ListItem>
-//         <ListItem>Problem-solving, Teamwork, Communication</ListItem>
-//       </List>
-
-//       <SectionTitle>Experience</SectionTitle>
-//       <List>
-//         <ListItem>
-//           <strong>Software Developer | docme cloud solutions</strong> (July 2024 - Present)
-//           <p>Developed full-stack web applications</p>
-//         </ListItem>
-//       </List>
-
-//       <SectionTitle>Education</SectionTitle>
-//       <List>
-//         <ListItem>
-//           <strong>Diploma in Computer Science and Engineering</strong> | (Graduated: May 2024)
-//           <p>Relevant coursework: Data Structures, Algorithms, Web Development.</p>
-//         </ListItem>
-//       </List>
-
-//       <SectionTitle>Certifications</SectionTitle>
-//       <List>
-//         <ListItem>AWS Workshop for Flipkart Clone using HTML, CSS & JavaScript | 2024</ListItem>
-//         <ListItem>Coursera: Building a Business Presence with Facebook Marketing | 2024</ListItem>
-//       </List>
-
-//       <SectionTitle>Projects</SectionTitle>
-//       <List>
-//         <ListItem>
-//           <strong>Seven Petals Website:</strong> Seven Petals is a fully functional e-commerce website designed for plant enthusiasts looking to buy, sell, and explore a variety of plants and gardening products online.
-//         </ListItem>
-//         <ListItem>
-//           <strong>Website for Fuel Delivery:</strong> The Fuel Delivery is an innovative solution designed to streamline the process of delivering fuel to various locations.
-//         </ListItem>
-//         <ListItem>
-//           <strong>Portfolio Website:</strong> A personal portfolio built with React.
-//         </ListItem>
-//       </List>
-
-//       {/* Circular Download Button */}
-//       <DownloadButton href="/resume.pdf" download>
-//         <FaDownload />
-//       </DownloadButton>
-//     </ResumeContainer>
-//   );
-// };
-
-// export default Resume;
+export default LandingPage;

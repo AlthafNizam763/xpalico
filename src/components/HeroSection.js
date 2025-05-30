@@ -4,7 +4,7 @@ import * as React from "react";
 function AboutSection1() {
   return (
     <section className="overflow-hidden">
-      <div className="flex overflow-hidden flex-col items-center px-14 pt-14 w-full bg-green-400 rounded-xl max-md:px-5 max-md:max-w-full">
+      <div className="flex overflow-hidden flex-col items-center px-14 pt-14 w-full bg-[#6DE754] rounded-xl max-md:px-5 max-md:max-w-full">
         
         {/* Hero Content */}
         <h1 className="text-5xl font-semibold text-center text-black w-[420px] max-md:text-4xl">

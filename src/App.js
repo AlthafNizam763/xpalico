@@ -31,7 +31,8 @@ function App() {
   return (
     <Router>
       <Navbar />
-      {/* <HeroSection /> */}
+      <Resume/>
+      <HeroSection />
       <Routes>
         {/* <Route path="/" element={<HeroSection />} /> */}
         {/* <Route path="/about" element={<AboutMe />} />
@@ -42,7 +43,7 @@ function App() {
         <Route path="/message" element={<Message />} /> */}
       </Routes>
       <AboutMe/>
-      {/* <Projects/> */}
+      <Projects/>
       <Message/>
       <Footer />
     </Router>
