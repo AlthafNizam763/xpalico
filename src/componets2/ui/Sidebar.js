@@ -8,6 +8,7 @@ import {
   FaEllipsisV,
 } from 'react-icons/fa';
 import { IoHome } from 'react-icons/io5';
+import logoImage from '../../assets/34.jpeg';
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const Sidebar = () => {
   const navItems = [
     { icon: <IoHome size={18} />, label: 'Overview', path: '', active: true },
     { icon: <FaLayerGroup size={16} />, label: 'Banner', path: '/banner' },
-    { icon: <FaRegEnvelope size={16} />, label: 'Message', path: '/message' },
+    { icon: <FaRegEnvelope size={16} />, label: 'Message', path: '/messages' },
     { icon: <FaUserFriends size={16} />, label: 'User Controls', path: '/user-controls' },
     { icon: <FaCog size={16} />, label: 'Setting', path: '/settings' },
   ];
@@ -44,11 +45,13 @@ const Sidebar = () => {
         `}
       >
         {/* Logo Section */}
-        <div className="text-xl font-bold text-blue-700 mb-10 px-1">
-          <span>Wo </span>
-          <span className="text-black">R</span>
-          <span> e Experts</span>
+       <div className="text-xl font-bold mb-10 px-1">
+        <img src={logoImage} alt="User" className="w-8 h-8 rounded-full" />
+        <span className="text-blue-700">Mo</span>
+        <span className="text-black">R</span>
+        <span className="text-blue-700">e Experts</span>
         </div>
+
 
         {/* Navigation */}
         <nav className="flex flex-col gap-5 flex-grow">
