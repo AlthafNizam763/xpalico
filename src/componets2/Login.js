@@ -2,40 +2,59 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import logoImage from '../assets/34.png';
+import NotificationPopup from './ui/NotificationPopup'; // Adjust if needed
 
 const AuthPage = () => {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
+    username: '',
     email: '',
     password: '',
+    confirmPassword: '',
     name: '',
     phoneNumber: '',
   });
+
   const [tab, setTab] = useState('login');
+  const [notification, setNotification] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleLogin = () => {
-    if (form.email === 'bondi' && form.password === '123abcAB') {
-      alert('Login successful!');
-      navigate('/dashboard');
+    if (form.username === 'bondi' && form.password === '123abcAB') {
+      setNotification({ type: 'info', message: 'Login successful!' });
+      setTimeout(() => navigate('/dashboard'), 1200);
     } else {
-      alert('Invalid email or password');
+      setNotification({ type: 'error', message: 'Invalid username or password' });
     }
   };
 
   const handleRegister = () => {
-    console.log('Registering with', form);
-    alert('Registration submitted!');
+    if (form.password !== form.confirmPassword) {
+      setNotification({ type: 'error', message: 'Passwords do not match' });
+      return;
+    }
+    setNotification({ type: 'success', message: 'Registration successful!' });
   };
 
   return (
-    <div className="min-h-screen flex">
-      {/* Left panel */}
+    <div className="min-h-screen flex relative">
+      {/* Notification */}
+      {notification && (
+        <div className="fixed top-6 right-6 z-50">
+          <NotificationPopup
+            type={notification.type}
+            message={notification.message}
+            onClose={() => setNotification(null)}
+          />
+        </div>
+      )}
+
+      {/* Left Panel */}
       <div className="w-1/2 bg-gradient-to-b from-blue-500 to-blue-900 text-white flex flex-col justify-center items-start pl-20">
         <img src={logoImage} alt="Logo" className="w-12 h-12 mb-2" />
         <p className="text-lg font-semibold">MoRe Experts</p>
@@ -46,9 +65,8 @@ const AuthPage = () => {
         </div>
       </div>
 
-      {/* Right panel */}
+      {/* Right Panel */}
       <div className="w-1/2 flex items-center justify-center bg-white relative">
-        {/* Back arrow */}
         <button
           onClick={() => navigate('/xpalico')}
           className="absolute top-4 left-4 text-blue-700 hover:text-blue-900 transition"
@@ -57,16 +75,21 @@ const AuthPage = () => {
         </button>
 
         <div className="w-full max-w-md p-8">
-          <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">Welcome Back!</h2>
-          <p className="text-center text-gray-600 mb-6">Sign in to Continue</p>
+          <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">
+            {tab === 'login' ? 'Welcome Back!' : 'Create Account'}
+          </h2>
+          <p className="text-center text-gray-600 mb-6">
+            {tab === 'login' ? 'Sign in to Continue' : 'Please fill in the form to register'}
+          </p>
 
+          {/* Login Form */}
           {tab === 'login' && (
             <form onSubmit={(e) => { e.preventDefault(); handleLogin(); }} className="space-y-4">
               <input
                 type="text"
-                name="email"
+                name="username"
                 placeholder="Username"
-                value={form.email}
+                value={form.username}
                 onChange={handleChange}
                 className="w-full px-4 py-2 border rounded"
                 required
@@ -99,6 +122,7 @@ const AuthPage = () => {
             </form>
           )}
 
+          {/* Register Form */}
           {tab === 'register' && (
             <form onSubmit={(e) => { e.preventDefault(); handleRegister(); }} className="space-y-4">
               <input
@@ -111,10 +135,10 @@ const AuthPage = () => {
                 required
               />
               <input
-                type="number"
-                name="phoneNumber"
-                placeholder="Phone Number"
-                value={form.phoneNumber}
+                type="text"
+                name="username"
+                placeholder="Username"
+                value={form.username}
                 onChange={handleChange}
                 className="w-full px-4 py-2 border rounded"
                 required
@@ -129,10 +153,28 @@ const AuthPage = () => {
                 required
               />
               <input
+                type="number"
+                name="phoneNumber"
+                placeholder="Phone Number"
+                value={form.phoneNumber}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border rounded"
+                required
+              />
+              <input
                 type="password"
                 name="password"
                 placeholder="Password"
                 value={form.password}
+                onChange={handleChange}
+                className="w-full px-4 py-2 border rounded"
+                required
+              />
+              <input
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm Password"
+                value={form.confirmPassword}
                 onChange={handleChange}
                 className="w-full px-4 py-2 border rounded"
                 required
