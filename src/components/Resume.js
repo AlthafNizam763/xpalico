@@ -6,12 +6,12 @@ import maximizeIconImg from '../assets/31.jpeg';
 const HeroSection = () => {
   return (
     <section className="flex flex-col gap-5 items-center text-center">
-      <h1 className="w-full text-8xl font-semibold text-center max-w-[852px] max-md:text-6xl max-sm:text-5xl max-sm:leading-none">
+      <h1 className="w-full text-8xl font-serif text-center cursor-help max-w-[852px] max-md:text-6xl max-sm:text-5xl max-sm:leading-none">
         <span className="text-[#6DE754]">Win your dream & job</span>
         <span className="text-white"> with MoRe Experts</span>
       </h1>
 
-      <p className="w-full text-base tracking-wide leading-6 text-center max-w-[474px] text-neutral-400 max-sm:text-sm max-sm:leading-5">
+      <p className="w-full text-base tracking-wide font-mono leading-6 text-center max-w-[474px] text-neutral-400 max-sm:text-sm max-sm:leading-5">
         Submit better job and build your dreams
       </p>
 

@@ -25,7 +25,7 @@ const AuthPage = () => {
   };
 
   const handleLogin = () => {
-    if (form.username === 'bondi' && form.password === '123abcAB') {
+    if (form.username === '****' && form.password === '****') {
       setNotification({ type: 'info', message: 'Login successful!' });
       setTimeout(() => navigate('/dashboard'), 1200);
     } else {
