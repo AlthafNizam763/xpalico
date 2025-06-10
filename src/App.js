@@ -7,27 +7,39 @@ import UserControls from './componets2/UserControls';
 import Resume from './components/Resume';
 import HeroSection from './components/HeroSection';
 import AboutMe from './components/AboutMe';
-import Projects from './components/Projects';
+// import Projects from './components/Projects';
 import Message from './components/Message';
 import Footer from './components/Footer';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCookieBite } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
   return (
     <Router>
+      {/* Fixed icon on top-right for all screens */}
+      <div className="fixed bottom-10 right-10 z-50">
+        <FontAwesomeIcon
+          icon={faCookieBite}
+          size="2xl"
+          style={{ color: "#5e4603" }}
+        />
+      </div>
+
       <Routes>
         <Route path="/login" element={<Login />} />
-         <Route path="/dashboard" element={<DashBoard />} />
-         <Route path="/messages" element={<Messages />} />
-         <Route path="/userControls" element={<UserControls />} />
+        <Route path="/dashboard" element={<DashBoard />} />
+        <Route path="/messages" element={<Messages />} />
+        <Route path="/userControls" element={<UserControls />} />
         <Route
           path="/xpalico"
           element={
             <>
-             <Navbar />
+              <Navbar />
               <Resume />
-              <HeroSection />
+              {/* <HeroSection /> */}
               <AboutMe />
-              <Projects />
+              {/* <Projects /> */}
               <Message />
               <Footer />
             </>

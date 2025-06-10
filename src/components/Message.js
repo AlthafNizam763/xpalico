@@ -7,20 +7,20 @@ const ResumeDesignSection: React.FC = () => {
   };
 
   return (
-    <section className="bg-black text-white py-16 px-4 md:px-8 flex justify-center">
+    <section className="bg-black text-[#FFF6D6] py-16 px-4 md:px-8 flex justify-center">
       <div className="flex flex-col-reverse lg:flex-row items-center gap-12 max-w-7xl w-full">
         {/* Text Content */}
         <div className="w-full max-w-xl text-center lg:text-left">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
+          <h1 className="text-4xl md:text-5xl font-serif leading-tight mb-6">
             Create website for you
           </h1>
-          <p className="text-neutral-400 text-base md:text-lg leading-6 mb-8">
+          <p className="text-neutral-400 font-mono text-base md:text-lg leading-6 mb-8">
             We help you build a modern, responsive, and professional website tailored to your brand or portfolio—no tech skills needed. Launch your online presence easily!
           </p>
           <div className="flex justify-center lg:justify-start">
             {/* <button
               onClick={handleCreateAccount}
-              className="px-6 py-3 bg-black border border-[#6DE754] text-white rounded-full font-semibold hover:bg-[#6DE754] hover:text-black transition"
+              className="px-6 py-3 bg-black border border-[#6DE754] text-[#FFF6D6] rounded-full font-semibold hover:bg-[#6DE754] hover:text-black transition"
             >
               Create an Account
             </button> */}

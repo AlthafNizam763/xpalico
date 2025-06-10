@@ -8,7 +8,7 @@ const HeroSection = () => {
     <section className="flex flex-col gap-5 items-center text-center">
       <h1 className="w-full text-8xl font-serif text-center cursor-help max-w-[852px] max-md:text-6xl max-sm:text-5xl max-sm:leading-none">
         <span className="text-[#6DE754]">Win your dream & job</span>
-        <span className="text-white"> with MoRe Experts</span>
+        <span className="text-[#FFF6D6]"> with MoRe Experts</span>
       </h1>
 
       <p className="w-full text-base tracking-wide font-mono leading-6 text-center max-w-[474px] text-neutral-400 max-sm:text-sm max-sm:leading-5">
@@ -20,7 +20,7 @@ const HeroSection = () => {
           <label htmlFor="email" className="text-lg leading-6 text-neutral-400 max-sm:text-center">
             Your Email
           </label>
-          <button className="gap-2.5 px-8 py-3 text-base font-semibold tracking-normal leading-5 text-center text-gray-800 bg-[#6DE754] rounded-xl cursor-pointer max-sm:w-full hover:bg-black hover:text-white transition">
+          <button className="gap-2.5 px-8 py-3 text-base font-semibold tracking-normal leading-5 text-center text-gray-800 bg-[#6DE754] rounded-xl cursor-pointer max-sm:w-full hover:bg-black hover:text-[#FFF6D6] transition">
             Start For Free
           </button>
         </div>
@@ -39,10 +39,10 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description }) =
   return (
     <article className="box-border flex flex-col gap-4 items-start p-6 w-full rounded-xl bg-stone-900 max-w-[361px] max-md:max-w-full max-sm:max-w-full">
       <img src={icon} alt={`${title} icon`} className="w-12 h-12 rounded-md" />
-      <h3 className="text-base font-semibold tracking-wide leading-5 text-white">
+      <h3 className="text-base font-serif tracking-wide leading-5 text-[#FFF6D6]">
         {title}
       </h3>
-      <p className="w-full text-base tracking-wide leading-6 max-w-[313px] text-neutral-400">
+      <p className="font-mono w-full text-base tracking-wide leading-6 max-w-[313px] text-neutral-400">
         {description}
       </p>
     </article>

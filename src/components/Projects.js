@@ -8,7 +8,7 @@ interface CtaButtonProps {
 
 const CtaButton: React.FC<CtaButtonProps> = ({ text }) => {
   return (
-    <button className="gap-2.5 px-8 py-3 text-base font-semibold tracking-normal leading-5 text-center text-black rounded-xl border border-solid transition-all cursor-pointer border-neutral-900 duration-[0.2s] ease-[ease] hover:bg-black hover:text-white max-sm:px-6 max-sm:py-2.5 max-sm:w-full">
+    <button className="gap-2.5 px-8 py-3 text-base font-semibold tracking-normal leading-5 text-center text-black rounded-xl border border-solid transition-all cursor-pointer border-neutral-900 duration-[0.2s] ease-[ease] hover:bg-black hover:text-[#FFF6D6] max-sm:px-6 max-sm:py-2.5 max-sm:w-full">
       {text}
     </button>
   );
