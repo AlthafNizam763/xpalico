@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/xpalico/static/css/main.ee039a8b.css",
-    "main.js": "/xpalico/static/js/main.72b335c9.js",
+    "main.css": "/xpalico/static/css/main.32a8eb17.css",
+    "main.js": "/xpalico/static/js/main.2e20d079.js",
     "static/js/453.ed3810f9.chunk.js": "/xpalico/static/js/453.ed3810f9.chunk.js",
     "static/media/34.png": "/xpalico/static/media/34.61219cf0b8324ecc7112.png",
     "static/media/30.jpeg": "/xpalico/static/media/30.65b16a5bb556e4fe095b.jpeg",
     "static/media/31.jpeg": "/xpalico/static/media/31.8eec08cb42829844b4c0.jpeg",
     "static/media/34.jpeg": "/xpalico/static/media/34.2d95399eaa0339f159ee.jpeg",
     "index.html": "/xpalico/index.html",
-    "main.ee039a8b.css.map": "/xpalico/static/css/main.ee039a8b.css.map",
-    "main.72b335c9.js.map": "/xpalico/static/js/main.72b335c9.js.map",
+    "main.32a8eb17.css.map": "/xpalico/static/css/main.32a8eb17.css.map",
+    "main.2e20d079.js.map": "/xpalico/static/js/main.2e20d079.js.map",
     "453.ed3810f9.chunk.js.map": "/xpalico/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ee039a8b.css",
-    "static/js/main.72b335c9.js"
+    "static/css/main.32a8eb17.css",
+    "static/js/main.2e20d079.js"
   ]
 }
